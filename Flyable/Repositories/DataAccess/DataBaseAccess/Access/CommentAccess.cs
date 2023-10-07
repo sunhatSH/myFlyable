@@ -78,7 +78,7 @@ public class CommentAccess : ICommentAccess
     public async Task<int> AddPostCommentAsync(PostComment comment)
     {
         return await _context.Posts!
-            .Where(post => post.PostId == comment.CommentTo)
+            .Where(post => post.PostId == comment.BelongsPost!.PostId)
             .ExecuteUpdateAsync(
                 calls => calls.SetProperty(
                     post => post.PostComments,
@@ -155,7 +155,7 @@ public class CommentAccess : ICommentAccess
     public async Task<int> AddNovelCommentAsync(NovelComment comment)
     {
         return await _context.Novels
-            .Where(novel => novel.NovelId == comment.ReplyTo)
+            .Where(novel => novel.NovelId == comment.BelongsNovel!.NovelId)
             .ExecuteUpdateAsync(
                 calls => calls.SetProperty(
                     novel => novel.NovelComments,
@@ -235,7 +235,7 @@ public class CommentAccess : ICommentAccess
     public async Task<int> AddChapterCommentAsync(ChapterComment comment)
     {
         return await _context.Chapters!
-            .Where(chapter => chapter.ChapterId == comment.ReplyTo)
+            .Where(chapter => chapter.ChapterId == comment.BelongsChapter!.ChapterId)
             .ExecuteUpdateAsync(
                 calls => calls.SetProperty(
                     chapter => chapter.ChapterComments,
@@ -321,28 +321,29 @@ public class CommentAccess : ICommentAccess
 
     public async Task<List<ChapterComment>> GetChapterCommentRepliesAsync(int commentId, int pageNum, int pageSize,
         int orderBy) =>
-        orderBy switch
-        {
-            1 => await _context.ChapterComments!
-                .Where(comment => comment.ReplyTo == commentId)
-                .OrderByDescending(comment => comment.LikeCount)
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync(),
-            2 => await _context.ChapterComments!
-                .Where(comment => comment.ReplyTo == commentId)
-                .OrderByDescending(comment => comment.ReplyCount)
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync(),
-            3 => await _context.ChapterComments!
-                .Where(comment => comment.ReplyTo == commentId)
-                .OrderByDescending(comment => comment.PublishTime)
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync(),
-            var _ => throw new Exception("未知排序方式")
-        };
+        throw new NotImplementedException();
+        // orderBy switch
+        // {
+        //     1 => await _context.ChapterComments!
+        //         .Where(comment => comment.ReplyTo == commentId)
+        //         .OrderByDescending(comment => comment.LikeCount)
+        //         .Skip((pageNum - 1) * pageSize)
+        //         .Take(pageSize)
+        //         .ToListAsync(),
+        //     2 => await _context.ChapterComments!
+        //         .Where(comment => comment.ReplyTo == commentId)
+        //         .OrderByDescending(comment => comment.ReplyCount)
+        //         .Skip((pageNum - 1) * pageSize)
+        //         .Take(pageSize)
+        //         .ToListAsync(),
+        //     3 => await _context.ChapterComments!
+        //         .Where(comment => comment.ReplyTo == commentId)
+        //         .OrderByDescending(comment => comment.PublishTime)
+        //         .Skip((pageNum - 1) * pageSize)
+        //         .Take(pageSize)
+        //         .ToListAsync(),
+        //     var _ => throw new Exception("未知排序方式")
+        // };
 
 
     public async Task<int> DeleteChapterCommentReplyAsync(int commentId) =>
@@ -354,23 +355,25 @@ public class CommentAccess : ICommentAccess
 
     public async Task<int> AddChapterCommentReplyAsync(ChapterComment comment)
     {
-        await _context.Chapters!
-            .Where(chapter => chapter.ChapterId == comment.ReplyTo)
-            .ExecuteUpdateAsync(
-                calls => calls.SetProperty(
-                    chapter => chapter.ChapterComments,
-                    chapter => chapter.ChapterComments!.Append(comment))
-            );
-        return await _context.SaveChangesAsync();
+        throw new NotImplementedException();
+        // await _context.Chapters!
+        //     .Where(chapter => chapter.ChapterId == comment.ReplyTo)
+        //     .ExecuteUpdateAsync(
+        //         calls => calls.SetProperty(
+        //             chapter => chapter.ChapterComments,
+        //             chapter => chapter.ChapterComments!.Append(comment))
+        //     );
+        // return await _context.SaveChangesAsync();
     }
 
     public async Task<int> UpdateChapterCommentReplyAsync(int commentId, string content)
     {
-        return await _context.ChapterComments!
-            .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
-            .ExecuteUpdateAsync(
-                calls => calls.SetProperty(comment => comment.Content, content)
-            );
+        throw new NotImplementedException();
+        // return await _context.ChapterComments!
+        //     .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
+        //     .ExecuteUpdateAsync(
+        //         calls => calls.SetProperty(comment => comment.Content, content)
+        //     );
     }
 
     /// <summary>
@@ -426,48 +429,48 @@ public class CommentAccess : ICommentAccess
                 .Where(user => user.UserId == userId)
                 .ExecuteDeleteAsync();
         }
-        else if (targetType == typeof(PostComment))
-        {
-            updateResult = await _context.PostComments!
-                .Where(comment => comment.PostCommentId == commentId && comment.IsReply)
-                .ExecuteUpdateAsync(
-                    calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount - 1)
-                );
-            deleteResult = await (_context.PostComments!.Where(comment => comment.PostCommentId == commentId && comment.IsReply)
-                    .Include(postComment => postComment.LikeUsers)
-                    .Single(comment => comment.PostCommentId == commentId && comment.IsReply)
-                    .LikeUsers ?? throw new InvalidOperationException()).AsQueryable()
-                .Where(user => user.UserId == userId)
-                .ExecuteDeleteAsync();
-        }
-        else if (targetType == typeof(NovelComment))
-        {
-            updateResult = await _context.NovelComments!
-                .Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
-                .ExecuteUpdateAsync(
-                    calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount - 1)
-                );
-            deleteResult = await (_context.NovelComments!.Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
-                    .Include(novelComment => novelComment.LikeUsers)
-                    .Single(comment => comment.NovelCommentId == commentId && comment.IsReply)
-                    .LikeUsers ?? throw new InvalidOperationException()).AsQueryable()
-                .Where(user => user.UserId == userId)
-                .ExecuteDeleteAsync();
-        }
-        else if (targetType == typeof(ChapterComment))
-        {
-            updateResult = await _context.ChapterComments!
-                .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
-                .ExecuteUpdateAsync(
-                    calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount - 1)
-                );
-            deleteResult = await (_context.ChapterComments!.Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
-                    .Include(chapterComment => chapterComment.LikeUsers)
-                    .Single(comment => comment.ChapterCommentId == commentId && comment.IsReply)
-                    .LikeUsers ?? throw new InvalidOperationException()).AsQueryable()
-                .Where(user => user.UserId == userId)
-                .ExecuteDeleteAsync();
-        }
+        // else if (targetType == typeof(PostComment))
+        // {
+        //     updateResult = await _context.PostComments!
+        //         .Where(comment => comment.PostCommentId == commentId && comment.IsReply)
+        //         .ExecuteUpdateAsync(
+        //             calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount - 1)
+        //         );
+        //     deleteResult = await (_context.PostComments!.Where(comment => comment.PostCommentId == commentId && comment.IsReply)
+        //             .Include(postComment => postComment.LikeUsers)
+        //             .Single(comment => comment.PostCommentId == commentId && comment.IsReply)
+        //             .LikeUsers ?? throw new InvalidOperationException()).AsQueryable()
+        //         .Where(user => user.UserId == userId)
+        //         .ExecuteDeleteAsync();
+        // }
+        // else if (targetType == typeof(NovelComment))
+        // {
+        //     updateResult = await _context.NovelComments!
+        //         .Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
+        //         .ExecuteUpdateAsync(
+        //             calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount - 1)
+        //         );
+        //     deleteResult = await (_context.NovelComments!.Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
+        //             .Include(novelComment => novelComment.LikeUsers)
+        //             .Single(comment => comment.NovelCommentId == commentId && comment.IsReply)
+        //             .LikeUsers ?? throw new InvalidOperationException()).AsQueryable()
+        //         .Where(user => user.UserId == userId)
+        //         .ExecuteDeleteAsync();
+        // }
+        // else if (targetType == typeof(ChapterComment))
+        // {
+        //     updateResult = await _context.ChapterComments!
+        //         .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
+        //         .ExecuteUpdateAsync(
+        //             calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount - 1)
+        //         );
+        //     deleteResult = await (_context.ChapterComments!.Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
+        //             .Include(chapterComment => chapterComment.LikeUsers)
+        //             .Single(comment => comment.ChapterCommentId == commentId && comment.IsReply)
+        //             .LikeUsers ?? throw new InvalidOperationException()).AsQueryable()
+        //         .Where(user => user.UserId == userId)
+        //         .ExecuteDeleteAsync();
+        // }
         else
         {
             throw new Exception("未知目标类型，无法点赞");
@@ -521,48 +524,49 @@ public class CommentAccess : ICommentAccess
                     .SingleAsync(comment => comment.ChapterCommentId == commentId))
                     .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
             insertResult = await _context.SaveChangesAsync();
-        }else if (targetType == typeof(PostComment))
-        {
-            updateResult = await _context.PostComments!
-                .Where(comment => comment.PostCommentId == commentId && comment.IsReply)
-                .ExecuteUpdateAsync(
-                    calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount + 1)
-                );
-            (await _context.PostComments!
-                    .Where(comment => comment.PostCommentId == commentId && comment.IsReply)
-                    .Include(postComment => postComment.LikeUsers)
-                    .SingleAsync(comment => comment.PostCommentId == commentId && comment.IsReply))
-                    .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
-            insertResult = await _context.SaveChangesAsync();
         }
-        else if (targetType == typeof(NovelComment))
-        {
-            updateResult = await _context.NovelComments!
-                .Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
-                .ExecuteUpdateAsync(
-                    calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount + 1)
-                );
-            (await _context.NovelComments!
-                    .Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
-                    .Include(novelComment => novelComment.LikeUsers)
-                    .SingleAsync(comment => comment.NovelCommentId == commentId && comment.IsReply))
-                    .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
-            insertResult = await _context.SaveChangesAsync();
-        }
-        else if (targetType == typeof(ChapterComment))
-        {
-            updateResult = await _context.ChapterComments!
-                .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
-                .ExecuteUpdateAsync(
-                    calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount + 1)
-                );
-            (await _context.ChapterComments!
-                    .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
-                    .Include(chapterComment => chapterComment.LikeUsers)
-                    .SingleAsync(comment => comment.ChapterCommentId == commentId && comment.IsReply))
-                    .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
-            insertResult = await _context.SaveChangesAsync();
-        }
+        // else if (targetType == typeof(PostComment))
+        // {
+        //     updateResult = await _context.PostComments!
+        //         .Where(comment => comment.PostCommentId == commentId && comment.IsReply)
+        //         .ExecuteUpdateAsync(
+        //             calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount + 1)
+        //         );
+        //     (await _context.PostComments!
+        //             .Where(comment => comment.PostCommentId == commentId && comment.IsReply)
+        //             .Include(postComment => postComment.LikeUsers)
+        //             .SingleAsync(comment => comment.PostCommentId == commentId && comment.IsReply))
+        //             .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
+        //     insertResult = await _context.SaveChangesAsync();
+        // }
+        // else if (targetType == typeof(NovelComment))
+        // {
+        //     updateResult = await _context.NovelComments!
+        //         .Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
+        //         .ExecuteUpdateAsync(
+        //             calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount + 1)
+        //         );
+        //     (await _context.NovelComments!
+        //             .Where(comment => comment.NovelCommentId == commentId && comment.IsReply)
+        //             .Include(novelComment => novelComment.LikeUsers)
+        //             .SingleAsync(comment => comment.NovelCommentId == commentId && comment.IsReply))
+        //             .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
+        //     insertResult = await _context.SaveChangesAsync();
+        // }
+        // else if (targetType == typeof(ChapterComment))
+        // {
+        //     updateResult = await _context.ChapterComments!
+        //         .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
+        //         .ExecuteUpdateAsync(
+        //             calls => calls.SetProperty(comment => comment.LikeCount, comment => comment.LikeCount + 1)
+        //         );
+        //     (await _context.ChapterComments!
+        //             .Where(comment => comment.ChapterCommentId == commentId && comment.IsReply)
+        //             .Include(chapterComment => chapterComment.LikeUsers)
+        //             .SingleAsync(comment => comment.ChapterCommentId == commentId && comment.IsReply))
+        //             .LikeUsers.Add(_context.Users.Single(user => user.UserId == userId));
+        //     insertResult = await _context.SaveChangesAsync();
+        // }
         else
         {
             throw new Exception("未知目标类型，无法点赞");

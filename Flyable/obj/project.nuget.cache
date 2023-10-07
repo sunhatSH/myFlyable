@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "poghTV7mtLnWgCc/69W3f0soLtLFCivF3Urw3Xy9XaeJZsjUSEzImieV3AkUWukkx+zTeux4MYpvh+HfAVFtdg==",
+  "dgSpecHash": "vOr8QL4ylaJSskJngjAesG3MsSAtUSdW/tnq/hZa0RVM93xWK9gRYYGmfkec9sn1wvNSZeZ6dvw7JvM1ilQryg==",
   "success": true,
   "projectFilePath": "/Users/sunhao/RiderProjects/Flyable/Flyable/Flyable.csproj",
   "expectedPackageFiles": [
@@ -107,7 +107,10 @@
     "/Users/sunhao/.nuget/packages/system.text.json/7.0.1/system.text.json.7.0.1.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/Users/sunhao/.nuget/packages/system.windows.extensions/7.0.0/system.windows.extensions.7.0.0.nupkg.sha512"
+    "/Users/sunhao/.nuget/packages/system.windows.extensions/7.0.0/system.windows.extensions.7.0.0.nupkg.sha512",
+    "/Users/sunhao/.nuget/packages/microsoft.netcore.app.ref/7.0.8/microsoft.netcore.app.ref.7.0.8.nupkg.sha512",
+    "/Users/sunhao/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.8/microsoft.aspnetcore.app.ref.7.0.8.nupkg.sha512",
+    "/Users/sunhao/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.8/microsoft.netcore.app.host.osx-arm64.7.0.8.nupkg.sha512"
   ],
   "logs": []
 }

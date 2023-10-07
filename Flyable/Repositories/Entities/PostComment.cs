@@ -31,6 +31,7 @@ public class PostComment
     [NotMapped]
     public int ReplyCount => Replies?.Count ?? 0;
 
+    public Post BelongsPost { get; set; } = null!;
 
     public List<Reply>? Replies { get; set; }
 

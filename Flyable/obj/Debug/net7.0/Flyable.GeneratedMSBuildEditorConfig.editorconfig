@@ -10,6 +10,7 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Flyable
 build_property.RootNamespace = Flyable
 build_property.ProjectDir = /Users/sunhao/RiderProjects/Flyable/Flyable/
+build_property.EnableComHosting = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
