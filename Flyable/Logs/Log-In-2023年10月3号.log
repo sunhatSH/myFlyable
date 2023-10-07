@@ -1,0 +1,297 @@
+2023-10-03 12:33:43.702 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:33:43.707 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:33:43.708 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:33:43.708 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:33:43.708 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:33:43.708 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:33:43.708 +08:00 [INF]           |___/
+2023-10-03 12:33:43.708 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:33:43.708 +08:00 [INF]                      o8888888o
+2023-10-03 12:33:43.708 +08:00 [INF]                      88" . "88
+2023-10-03 12:33:43.708 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:33:43.708 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:33:43.708 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:33:43.708 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:33:43.708 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:33:43.708 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:33:43.708 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:33:43.708 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:33:43.708 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:33:43.708 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:33:43.708 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:33:43.708 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:33:43.708 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:33:43.708 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:33:43.708 +08:00 [INF]                        `=---='
+2023-10-03 12:33:43.708 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:33:43.708 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:33:43.741 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:33:43.848 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:33:43.851 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:33:43.852 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:33:43.852 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:33:44.413 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:33:44.571 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 165.0464ms
+2023-10-03 12:33:44.696 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:33:44.910 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 214.1959ms
+2023-10-03 12:34:02.320 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/Comment/Test application/json 63
+2023-10-03 12:34:02.335 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-03 12:34:02.356 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:34:02.359 +08:00 [INF] Executing endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2023-10-03 12:34:02.369 +08:00 [INF] Route matched with {action = "Test", controller = "Comment"}. Executing controller action with signature System.String Test(Flyable.Services.ViewModels.CommentModelView, Int32) on controller Flyable.Controllers.CommentController (Flyable).
+2023-10-03 12:34:02.396 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-03 12:34:02.400 +08:00 [INF] Executed action Flyable.Controllers.CommentController.Test (Flyable) in 27.9018ms
+2023-10-03 12:34:02.402 +08:00 [INF] Executed endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2023-10-03 12:34:02.402 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/Comment/Test application/json 63 - 200 - text/plain;+charset=utf-8 82.0963ms
+2023-10-03 12:36:23.142 +08:00 [INF] Application is shutting down...
+2023-10-03 12:36:26.546 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:36:26.552 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:36:26.553 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:36:26.553 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:36:26.553 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:36:26.553 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:36:26.553 +08:00 [INF]           |___/
+2023-10-03 12:36:26.553 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:36:26.553 +08:00 [INF]                      o8888888o
+2023-10-03 12:36:26.553 +08:00 [INF]                      88" . "88
+2023-10-03 12:36:26.553 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:36:26.553 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:36:26.553 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:36:26.553 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:36:26.553 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:36:26.553 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:36:26.553 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:36:26.553 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:36:26.553 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:36:26.553 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:36:26.553 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:36:26.553 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:36:26.553 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:36:26.553 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:36:26.553 +08:00 [INF]                        `=---='
+2023-10-03 12:36:26.553 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:36:26.553 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:36:26.580 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:36:26.716 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:36:26.719 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:36:26.720 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:36:26.720 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:36:27.090 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:36:27.162 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 72.5557ms
+2023-10-03 12:36:27.234 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:36:27.465 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 230.5392ms
+2023-10-03 12:37:01.917 +08:00 [INF] Application is shutting down...
+2023-10-03 12:37:04.784 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:37:04.791 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:37:04.791 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:37:04.791 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:37:04.791 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:37:04.791 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:37:04.791 +08:00 [INF]           |___/
+2023-10-03 12:37:04.791 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:37:04.791 +08:00 [INF]                      o8888888o
+2023-10-03 12:37:04.791 +08:00 [INF]                      88" . "88
+2023-10-03 12:37:04.791 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:37:04.791 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:37:04.791 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:37:04.791 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:37:04.791 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:37:04.791 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:37:04.791 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:37:04.791 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:37:04.791 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:37:04.791 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:37:04.791 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:37:04.791 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:37:04.791 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:37:04.791 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:37:04.791 +08:00 [INF]                        `=---='
+2023-10-03 12:37:04.791 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:37:04.791 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:37:04.818 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:37:04.915 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:37:04.918 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:37:04.918 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:37:04.918 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:37:05.319 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:37:05.386 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 67.9227ms
+2023-10-03 12:37:05.456 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:37:05.692 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 236.6857ms
+2023-10-03 12:37:25.033 +08:00 [INF] Application is shutting down...
+2023-10-03 12:37:27.142 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:37:27.148 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:37:27.148 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:37:27.148 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:37:27.148 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:37:27.148 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:37:27.148 +08:00 [INF]           |___/
+2023-10-03 12:37:27.148 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:37:27.148 +08:00 [INF]                      o8888888o
+2023-10-03 12:37:27.148 +08:00 [INF]                      88" . "88
+2023-10-03 12:37:27.148 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:37:27.148 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:37:27.148 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:37:27.148 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:37:27.148 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:37:27.148 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:37:27.148 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:37:27.148 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:37:27.148 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:37:27.148 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:37:27.148 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:37:27.148 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:37:27.148 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:37:27.148 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:37:27.148 +08:00 [INF]                        `=---='
+2023-10-03 12:37:27.148 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:37:27.148 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:37:27.175 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:37:27.268 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:37:27.271 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:37:27.271 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:37:27.271 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:37:27.638 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:37:27.726 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 88.3245ms
+2023-10-03 12:37:27.827 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:37:28.099 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 271.9354ms
+2023-10-03 12:37:59.491 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5181/api/Comment/Test/1 - 0
+2023-10-03 12:37:59.509 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-03 12:37:59.531 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:37:59.533 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5181/api/Comment/Test/1 - 0 - 204 - - 42.5389ms
+2023-10-03 12:37:59.537 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/Comment/Test/1 application/json;charset=UTF-8 14
+2023-10-03 12:37:59.538 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:37:59.539 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/Comment/Test/1 application/json;charset=UTF-8 14 - 404 0 - 1.9095ms
+2023-10-03 12:38:09.566 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5181/api/Comment/Test/1 - 0
+2023-10-03 12:38:09.572 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:38:09.574 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5181/api/Comment/Test/1 - 0 - 204 - - 7.9817ms
+2023-10-03 12:38:09.576 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/Comment/Test/1 application/json;charset=UTF-8 14
+2023-10-03 12:38:09.577 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:38:09.577 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/Comment/Test/1 application/json;charset=UTF-8 14 - 404 0 - 1.0139ms
+2023-10-03 12:38:21.606 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/Test/1 - -
+2023-10-03 12:38:21.607 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/Test/1 - - - 404 0 - 0.4458ms
+2023-10-03 12:38:23.586 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/Test/1 - -
+2023-10-03 12:38:23.587 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/Test/1 - - - 404 0 - 0.9146ms
+2023-10-03 12:38:39.158 +08:00 [INF] Application is shutting down...
+2023-10-03 12:38:41.614 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:38:41.620 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:38:41.620 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:38:41.620 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:38:41.620 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:38:41.620 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:38:41.620 +08:00 [INF]           |___/
+2023-10-03 12:38:41.620 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:38:41.620 +08:00 [INF]                      o8888888o
+2023-10-03 12:38:41.620 +08:00 [INF]                      88" . "88
+2023-10-03 12:38:41.620 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:38:41.620 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:38:41.620 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:38:41.620 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:38:41.620 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:38:41.620 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:38:41.620 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:38:41.620 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:38:41.620 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:38:41.620 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:38:41.620 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:38:41.620 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:38:41.620 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:38:41.620 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:38:41.620 +08:00 [INF]                        `=---='
+2023-10-03 12:38:41.620 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:38:41.620 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:38:41.649 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:38:41.762 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:38:41.765 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:38:41.765 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:38:41.765 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:38:42.178 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:38:42.246 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 68.8771ms
+2023-10-03 12:38:42.310 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:38:42.528 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 217.8121ms
+2023-10-03 12:38:49.399 +08:00 [INF] Application is shutting down...
+2023-10-03 12:38:51.418 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:38:51.425 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:38:51.425 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:38:51.425 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:38:51.425 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:38:51.425 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:38:51.425 +08:00 [INF]           |___/
+2023-10-03 12:38:51.425 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:38:51.425 +08:00 [INF]                      o8888888o
+2023-10-03 12:38:51.425 +08:00 [INF]                      88" . "88
+2023-10-03 12:38:51.425 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:38:51.425 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:38:51.425 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:38:51.425 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:38:51.425 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:38:51.425 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:38:51.425 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:38:51.425 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:38:51.425 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:38:51.425 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:38:51.425 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:38:51.425 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:38:51.425 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:38:51.425 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:38:51.425 +08:00 [INF]                        `=---='
+2023-10-03 12:38:51.425 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:38:51.425 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:38:51.451 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:38:51.550 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:38:51.553 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:38:51.553 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:38:51.553 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:38:51.935 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:38:52.007 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 73.0429ms
+2023-10-03 12:38:52.116 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:38:52.360 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 246.1533ms
+2023-10-03 12:39:04.179 +08:00 [INF] Application is shutting down...
+2023-10-03 12:39:06.283 +08:00 [INF] Flyable后端服务启动中...
+2023-10-03 12:39:06.288 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-03 12:39:06.288 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-03 12:39:06.288 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-03 12:39:06.288 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-03 12:39:06.288 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-03 12:39:06.289 +08:00 [INF]           |___/
+2023-10-03 12:39:06.289 +08:00 [INF]                       _ooOoo_
+2023-10-03 12:39:06.289 +08:00 [INF]                      o8888888o
+2023-10-03 12:39:06.289 +08:00 [INF]                      88" . "88
+2023-10-03 12:39:06.289 +08:00 [INF]                      (| ^_^ |)
+2023-10-03 12:39:06.289 +08:00 [INF]                      O\  =  /O
+2023-10-03 12:39:06.289 +08:00 [INF]                   ____/`---'\____
+2023-10-03 12:39:06.289 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-03 12:39:06.289 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-03 12:39:06.289 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-03 12:39:06.289 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-03 12:39:06.289 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-03 12:39:06.289 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-03 12:39:06.289 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-03 12:39:06.289 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-03 12:39:06.289 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-03 12:39:06.289 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-03 12:39:06.289 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-03 12:39:06.289 +08:00 [INF]                        `=---='
+2023-10-03 12:39:06.289 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-03 12:39:06.289 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-03 12:39:06.316 +08:00 [INF] 当前环境为开发环境
+2023-10-03 12:39:06.409 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-03 12:39:06.412 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-03 12:39:06.412 +08:00 [INF] Hosting environment: Development
+2023-10-03 12:39:06.412 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-03 12:39:06.787 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-03 12:39:06.862 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 75.8185ms
+2023-10-03 12:39:06.973 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-03 12:39:07.201 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 227.9240ms
+2023-10-03 12:39:31.169 +08:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5181/api/Comment/Test/1 - 0
+2023-10-03 12:39:31.185 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-03 12:39:31.213 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:39:31.214 +08:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5181/api/Comment/Test/1 - 0 - 204 - - 45.4069ms
+2023-10-03 12:39:31.218 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/Comment/Test/1 application/json;charset=UTF-8 17
+2023-10-03 12:39:31.218 +08:00 [INF] CORS policy execution successful.
+2023-10-03 12:39:31.222 +08:00 [INF] Executing endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2023-10-03 12:39:31.234 +08:00 [INF] Route matched with {action = "Test", controller = "Comment"}. Executing controller action with signature System.String Test(Flyable.Services.ViewModels.CommentModelView, Int32) on controller Flyable.Controllers.CommentController (Flyable).
+2023-10-03 12:39:31.259 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-03 12:39:31.261 +08:00 [INF] Executed action Flyable.Controllers.CommentController.Test (Flyable) in 25.2892ms
+2023-10-03 12:39:31.263 +08:00 [INF] Executed endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2023-10-03 12:39:31.263 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/Comment/Test/1 application/json;charset=UTF-8 17 - 200 - text/plain;+charset=utf-8 45.5342ms
+2023-10-03 12:48:22.056 +08:00 [INF] Application is shutting down...

@@ -1,0 +1,553 @@
+2023-10-01 18:30:57.054 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 18:30:57.062 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 18:30:57.062 +08:00 [INF] Hosting environment: Development
+2023-10-01 18:30:57.062 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 18:30:57.455 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 18:30:57.512 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 56.9942ms
+2023-10-01 18:30:57.554 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 18:30:57.778 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 224.2165ms
+2023-10-01 18:33:32.157 +08:00 [INF] Application is shutting down...
+2023-10-01 18:33:32.157 +08:00 [WRN] Application is shutting down..2023-10-01 18:37:32.086 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 18:37:32.094 +08:00 [info] Application started. Press Ctrl+C to shut down.
+2023-10-01 18:37:32.094 +08:00 [ERR] Hosting environment: Development
+2023-10-01 18:37:32.094 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 18:37:32.446 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 18:37:32.505 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 59.4057ms
+2023-10-01 18:37:32.549 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 18:37:32.776 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 226.2921ms
+2023-10-01 18:38:19.082 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/User/Test - -
+2023-10-01 18:38:19.098 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-01 18:38:19.124 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:38:19.131 +08:00 [INF] Route matched with {action = "Test", controller = "User"}. Executing controller action with signature System.String Test() on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 18:38:19.263 +08:00 [ERR] Test success
+2023-10-01 18:38:19.283 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-01 18:38:19.286 +08:00 [INF] Executed action Flyable.Controllers.UserController.Test (Flyable) in 153.1127ms
+2023-10-01 18:38:19.288 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:38:19.289 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/User/Test - - - 200 - text/plain;+charset=utf-8 206.4253ms
+2023-10-01 18:38:21.122 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/User/Test - -
+2023-10-01 18:38:21.124 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:38:21.124 +08:00 [INF] Route matched with {action = "Test", controller = "User"}. Executing controller action with signature System.String Test() on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 18:38:21.149 +08:00 [ERR] Test success
+2023-10-01 18:38:21.149 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-01 18:38:21.149 +08:00 [INF] Executed action Flyable.Controllers.UserController.Test (Flyable) in 24.6256ms
+2023-10-01 18:38:21.149 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:38:21.149 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/User/Test - - - 200 - text/plain;+charset=utf-8 27.2155ms
+2023-10-01 18:38:54.814 +08:00 [INF] Application is shutting down...
+2023-10-01 18:38:57.119 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 18:38:57.128 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 18:38:57.128 +08:00 [INF] Hosting environment: Development
+2023-10-01 18:38:57.128 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 18:38:57.520 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 18:38:57.579 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 60.1535ms
+2023-10-01 18:38:57.644 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 18:38:57.860 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.1152ms
+2023-10-01 18:39:06.677 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/User/Test - -
+2023-10-01 18:39:06.690 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-01 18:39:06.717 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:39:06.724 +08:00 [INF] Route matched with {action = "Test", controller = "User"}. Executing controller action with signature System.String Test() on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 18:39:06.848 +08:00 [ERR] Test success
+2023-10-01 18:39:06.848 +08:00 [WRN] Test success
+2023-10-01 18:39:06.867 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-01 18:39:06.870 +08:00 [INF] Executed action Flyable.Controllers.UserController.Test (Flyable) in 144.2895ms
+2023-10-01 18:39:06.871 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:39:06.872 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/User/Test - - - 200 - text/plain;+charset=utf-8 194.8660ms
+2023-10-01 18:39:08.029 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/User/Test - -
+2023-10-01 18:39:08.035 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:39:08.035 +08:00 [INF] Route matched with {action = "Test", controller = "User"}. Executing controller action with signature System.String Test() on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 18:39:08.045 +08:00 [ERR] Test success
+2023-10-01 18:39:08.045 +08:00 [WRN] Test success
+2023-10-01 18:39:08.045 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-01 18:39:08.046 +08:00 [INF] Executed action Flyable.Controllers.UserController.Test (Flyable) in 10.6727ms
+2023-10-01 18:39:08.046 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:39:08.046 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/User/Test - - - 200 - text/plain;+charset=utf-8 16.3898ms
+2023-10-01 18:40:09.556 +08:00 [INF] Application is shutting down...2023-10-01 18:46:53.698 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 18:46:53.707 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 18:46:53.707 +08:00 [INF] Hosting environment: Development
+2023-10-01 18:46:53.707 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 18:46:54.166 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 18:46:54.228 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 63.2240ms
+2023-10-01 18:46:54.339 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 18:46:54.572 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 233.0622ms
+2023-10-01 18:46:59.361 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/User/Test - -
+2023-10-01 18:46:59.372 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-01 18:46:59.386 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:46:59.392 +08:00 [INF] Route matched with {action = "Test", controller = "User"}. Executing controller action with signature System.String Test() on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 18:46:59.519 +08:00 [ERR] Test success
+2023-10-01 18:46:59.519 +08:00 [WRN] Test success
+2023-10-01 18:46:59.538 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-10-01 18:46:59.541 +08:00 [INF] Executed action Flyable.Controllers.UserController.Test (Flyable) in 147.0525ms
+2023-10-01 18:46:59.542 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.Test (Flyable)'
+2023-10-01 18:46:59.543 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/User/Test - - - 200 - text/plain;+charset=utf-8 182.3472ms
+2023-10-01 18:51:22.649 +08:00 [INF] Application is shutting down...2023-10-01 19:45:04.206 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 19:45:04.215 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 19:45:04.215 +08:00 [INF] Hosting environment: Development
+2023-10-01 19:45:04.215 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 19:45:04.506 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 19:45:04.565 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 60.2752ms
+2023-10-01 19:45:04.678 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 19:45:04.895 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 217.5300ms
+2023-10-01 19:47:41.170 +08:00 [INF] Application is shutting down...
+2023-10-01 19:47:43.630 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 19:47:43.636 +08:00 [INF]     _____ _             _     _                               _           _   
+   |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_ 
+   | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+   |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_ 
+   |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+            |___/                                                      
+2023-10-01 19:47:43.636 +08:00 [INF]                             _ooOoo_                               
+                           o8888888o                              
+                           88" . "88                              
+                           (| ^_^ |)                              
+                           O\  =  /O                              
+                        ____/`---'\____                           
+                      .'  \\|     |//  `.                         
+                     /  \\|||  :  |||//  \                        
+                    /  _||||| -:- |||||-  \                       
+                    |   | \\\  -  /// |   |                       
+                    | \_|  ''\---/''  |   |                       
+                    \  .-\__  `-`  ___/-. /                       
+                  ___`. .'  /--.--\  `. . ___                     
+                ."" '<  `.___\_<|>_/___.'  >'"".                  
+              | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 
+              \  \ `-.   \_ __\ /__ _/   .-` /  /                 
+        ========`-.____`-.___\_____/___.-`____.-'========         
+                             `=---='                              
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        
+           佛祖保佑       永无BUG     永不修改                       
+2023-10-01 19:47:43.787 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 19:47:43.790 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 19:47:43.790 +08:00 [INF] Hosting environment: Development
+2023-10-01 19:47:43.790 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 19:47:44.153 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 19:47:44.220 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 68.2930ms
+2023-10-01 19:47:44.350 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 19:47:44.623 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 272.9683ms
+2023-10-01 20:03:16.365 +08:00 [INF] Application is shutting down...
+2023-10-01 20:03:19.887 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:03:19.895 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:03:19.895 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:03:19.895 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:03:20.287 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:03:20.349 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 62.8462ms
+2023-10-01 20:03:20.473 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:03:20.713 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 240.2667ms
+2023-10-01 20:04:57.266 +08:00 [INF] Application is shutting down...
+2023-10-01 20:14:00.577 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 20:14:00.583 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 20:14:00.583 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 20:14:00.583 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 20:14:00.583 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 20:14:00.583 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 20:14:00.583 +08:00 [INF]           |___/
+2023-10-01 20:14:00.583 +08:00 [INF]                       _ooOoo_
+2023-10-01 20:14:00.583 +08:00 [INF]                      o8888888o
+2023-10-01 20:14:00.583 +08:00 [INF]                      88" . "88
+2023-10-01 20:14:00.583 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 20:14:00.583 +08:00 [INF]                      O\  =  /O
+2023-10-01 20:14:00.583 +08:00 [INF]                   ____/`---'\____
+2023-10-01 20:14:00.583 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 20:14:00.583 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 20:14:00.583 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 20:14:00.583 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 20:14:00.583 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 20:14:00.583 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 20:14:00.583 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 20:14:00.583 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 20:14:00.583 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 20:14:00.583 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 20:14:00.583 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 20:14:00.583 +08:00 [INF]                        `=---='
+2023-10-01 20:14:00.583 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 20:14:00.583 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 20:14:00.748 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:14:00.751 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:14:00.752 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:14:00.752 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:14:01.074 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:14:01.141 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 67.8672ms
+2023-10-01 20:14:01.256 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:14:01.477 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 220.8321ms
+2023-10-01 20:15:51.969 +08:00 [INF] Application is shutting down...
+2023-10-01 20:16:02.376 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 20:16:02.382 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 20:16:02.382 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 20:16:02.382 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 20:16:02.382 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 20:16:02.382 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 20:16:02.382 +08:00 [INF]           |___/
+2023-10-01 20:16:02.382 +08:00 [INF]                       _ooOoo_
+2023-10-01 20:16:02.382 +08:00 [INF]                      o8888888o
+2023-10-01 20:16:02.382 +08:00 [INF]                      88" . "88
+2023-10-01 20:16:02.382 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 20:16:02.382 +08:00 [INF]                      O\  =  /O
+2023-10-01 20:16:02.382 +08:00 [INF]                   ____/`---'\____
+2023-10-01 20:16:02.382 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 20:16:02.382 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 20:16:02.382 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 20:16:02.382 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 20:16:02.382 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 20:16:02.382 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 20:16:02.382 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 20:16:02.382 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 20:16:02.382 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 20:16:02.382 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 20:16:02.382 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 20:16:02.382 +08:00 [INF]                        `=---='
+2023-10-01 20:16:02.382 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 20:16:02.382 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 20:16:02.438 +08:00 [INF] 当前环境为开发环境
+2023-10-01 20:16:02.531 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:16:02.534 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:16:02.535 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:16:02.535 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:16:03.010 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:16:03.085 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 76.0793ms
+2023-10-01 20:16:03.202 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:16:03.441 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 239.7922ms
+2023-10-01 20:17:14.684 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:17:14.687 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 3.2492ms
+2023-10-01 20:26:13.431 +08:00 [INF] Application is shutting down...
+2023-10-01 20:26:16.845 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 20:26:16.851 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 20:26:16.851 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 20:26:16.851 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 20:26:16.851 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 20:26:16.851 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 20:26:16.851 +08:00 [INF]           |___/
+2023-10-01 20:26:16.851 +08:00 [INF]                       _ooOoo_
+2023-10-01 20:26:16.851 +08:00 [INF]                      o8888888o
+2023-10-01 20:26:16.851 +08:00 [INF]                      88" . "88
+2023-10-01 20:26:16.851 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 20:26:16.851 +08:00 [INF]                      O\  =  /O
+2023-10-01 20:26:16.851 +08:00 [INF]                   ____/`---'\____
+2023-10-01 20:26:16.851 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 20:26:16.851 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 20:26:16.851 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 20:26:16.851 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 20:26:16.851 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 20:26:16.851 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 20:26:16.851 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 20:26:16.852 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 20:26:16.852 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 20:26:16.852 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 20:26:16.852 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 20:26:16.852 +08:00 [INF]                        `=---='
+2023-10-01 20:26:16.852 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 20:26:16.852 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 20:26:16.913 +08:00 [INF] 当前环境为开发环境
+2023-10-01 20:26:17.005 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:26:17.008 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:26:17.008 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:26:17.008 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:26:17.386 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:26:17.445 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 59.8882ms
+2023-10-01 20:26:17.553 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:26:17.768 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.0074ms
+2023-10-01 20:26:46.968 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:26:46.974 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 6.8533ms
+2023-10-01 20:26:47.064 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:26:47.086 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 22.1862ms
+2023-10-01 20:26:50.948 +08:00 [INF] Application is shutting down...
+2023-10-01 20:26:53.286 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 20:26:53.292 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 20:26:53.292 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 20:26:53.292 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 20:26:53.292 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 20:26:53.292 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 20:26:53.292 +08:00 [INF]           |___/
+2023-10-01 20:26:53.292 +08:00 [INF]                       _ooOoo_
+2023-10-01 20:26:53.292 +08:00 [INF]                      o8888888o
+2023-10-01 20:26:53.292 +08:00 [INF]                      88" . "88
+2023-10-01 20:26:53.292 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 20:26:53.292 +08:00 [INF]                      O\  =  /O
+2023-10-01 20:26:53.292 +08:00 [INF]                   ____/`---'\____
+2023-10-01 20:26:53.292 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 20:26:53.292 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 20:26:53.292 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 20:26:53.292 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 20:26:53.292 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 20:26:53.292 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 20:26:53.292 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 20:26:53.292 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 20:26:53.292 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 20:26:53.292 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 20:26:53.292 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 20:26:53.292 +08:00 [INF]                        `=---='
+2023-10-01 20:26:53.292 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 20:26:53.292 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 20:26:53.347 +08:00 [INF] 当前环境为开发环境
+2023-10-01 20:26:53.437 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:26:53.440 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:26:53.440 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:26:53.440 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:26:53.796 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:26:53.851 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 55.6648ms
+2023-10-01 20:26:53.963 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:26:54.186 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 223.0790ms
+2023-10-01 20:31:57.317 +08:00 [INF] Application is shutting down...
+2023-10-01 20:32:04.976 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 20:32:04.982 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 20:32:04.982 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 20:32:04.982 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 20:32:04.982 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 20:32:04.982 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 20:32:04.982 +08:00 [INF]           |___/
+2023-10-01 20:32:04.982 +08:00 [INF]                       _ooOoo_
+2023-10-01 20:32:04.982 +08:00 [INF]                      o8888888o
+2023-10-01 20:32:04.982 +08:00 [INF]                      88" . "88
+2023-10-01 20:32:04.982 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 20:32:04.982 +08:00 [INF]                      O\  =  /O
+2023-10-01 20:32:04.982 +08:00 [INF]                   ____/`---'\____
+2023-10-01 20:32:04.982 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 20:32:04.982 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 20:32:04.982 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 20:32:04.982 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 20:32:04.982 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 20:32:04.982 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 20:32:04.982 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 20:32:04.982 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 20:32:04.982 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 20:32:04.982 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 20:32:04.982 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 20:32:04.982 +08:00 [INF]                        `=---='
+2023-10-01 20:32:04.982 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 20:32:04.982 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 20:32:05.007 +08:00 [INF] 当前环境为开发环境
+2023-10-01 20:32:05.091 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:32:05.094 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:32:05.094 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:32:05.094 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:32:05.590 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:32:05.668 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 78.6412ms
+2023-10-01 20:32:05.804 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:32:06.025 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 221.0970ms
+2023-10-01 20:40:52.197 +08:00 [INF] Application is shutting down...
+2023-10-01 20:40:58.908 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 20:40:58.918 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 20:40:58.918 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 20:40:58.918 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 20:40:58.918 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 20:40:58.918 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 20:40:58.918 +08:00 [INF]           |___/
+2023-10-01 20:40:58.918 +08:00 [INF]                       _ooOoo_
+2023-10-01 20:40:58.918 +08:00 [INF]                      o8888888o
+2023-10-01 20:40:58.918 +08:00 [INF]                      88" . "88
+2023-10-01 20:40:58.918 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 20:40:58.918 +08:00 [INF]                      O\  =  /O
+2023-10-01 20:40:58.918 +08:00 [INF]                   ____/`---'\____
+2023-10-01 20:40:58.918 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 20:40:58.918 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 20:40:58.918 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 20:40:58.918 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 20:40:58.918 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 20:40:58.918 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 20:40:58.918 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 20:40:58.918 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 20:40:58.918 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 20:40:58.918 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 20:40:58.918 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 20:40:58.918 +08:00 [INF]                        `=---='
+2023-10-01 20:40:58.918 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 20:40:58.918 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 20:40:59.017 +08:00 [INF] 当前环境为开发环境
+2023-10-01 20:40:59.258 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 20:40:59.263 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 20:40:59.264 +08:00 [INF] Hosting environment: Development
+2023-10-01 20:40:59.265 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 20:40:59.652 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 20:40:59.733 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 79.2120ms
+2023-10-01 20:40:59.790 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 20:41:00.044 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 254.7330ms
+2023-10-01 22:48:50.237 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 22:48:50.243 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 22:48:50.243 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 22:48:50.243 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 22:48:50.243 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 22:48:50.243 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 22:48:50.243 +08:00 [INF]           |___/
+2023-10-01 22:48:50.243 +08:00 [INF]                       _ooOoo_
+2023-10-01 22:48:50.243 +08:00 [INF]                      o8888888o
+2023-10-01 22:48:50.243 +08:00 [INF]                      88" . "88
+2023-10-01 22:48:50.243 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 22:48:50.243 +08:00 [INF]                      O\  =  /O
+2023-10-01 22:48:50.243 +08:00 [INF]                   ____/`---'\____
+2023-10-01 22:48:50.243 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 22:48:50.243 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 22:48:50.243 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 22:48:50.243 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 22:48:50.243 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 22:48:50.243 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 22:48:50.243 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 22:48:50.243 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 22:48:50.243 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 22:48:50.243 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 22:48:50.243 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 22:48:50.243 +08:00 [INF]                        `=---='
+2023-10-01 22:48:50.243 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 22:48:50.243 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 22:48:50.276 +08:00 [INF] 当前环境为开发环境
+2023-10-01 22:48:50.375 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 22:48:50.378 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 22:48:50.378 +08:00 [INF] Hosting environment: Development
+2023-10-01 22:48:50.378 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 22:48:50.743 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 22:48:50.804 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 62.0209ms
+2023-10-01 22:48:50.948 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 22:48:51.193 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 244.6138ms
+2023-10-01 22:50:45.398 +08:00 [INF] Application is shutting down...
+2023-10-01 22:50:47.925 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 22:50:47.931 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 22:50:47.931 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 22:50:47.931 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 22:50:47.931 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 22:50:47.931 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 22:50:47.931 +08:00 [INF]           |___/
+2023-10-01 22:50:47.931 +08:00 [INF]                       _ooOoo_
+2023-10-01 22:50:47.931 +08:00 [INF]                      o8888888o
+2023-10-01 22:50:47.931 +08:00 [INF]                      88" . "88
+2023-10-01 22:50:47.931 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 22:50:47.931 +08:00 [INF]                      O\  =  /O
+2023-10-01 22:50:47.931 +08:00 [INF]                   ____/`---'\____
+2023-10-01 22:50:47.931 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 22:50:47.931 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 22:50:47.931 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 22:50:47.931 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 22:50:47.932 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 22:50:47.933 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 22:50:47.933 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 22:50:47.933 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 22:50:47.933 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 22:50:47.933 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 22:50:47.933 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 22:50:47.933 +08:00 [INF]                        `=---='
+2023-10-01 22:50:47.933 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 22:50:47.933 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 22:50:47.959 +08:00 [INF] 当前环境为开发环境
+2023-10-01 22:50:48.059 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 22:50:48.062 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 22:50:48.062 +08:00 [INF] Hosting environment: Development
+2023-10-01 22:50:48.062 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 22:50:48.422 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 22:50:48.479 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 57.5912ms
+2023-10-01 22:50:48.599 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 22:50:48.844 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 244.8983ms
+2023-10-01 22:51:29.116 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/User/UnFollowUser multipart/form-data;+boundary=----WebKitFormBoundaryg1jxh8kXRrwWfC7w 140
+2023-10-01 22:51:29.133 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-01 22:51:29.156 +08:00 [INF] CORS policy execution successful.
+2023-10-01 22:51:29.159 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.UnFollowUser (Flyable)'
+2023-10-01 22:51:29.178 +08:00 [INF] Route matched with {action = "UnFollowUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UnFollowUser(Int32) on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 22:51:29.318 +08:00 [INF] Executing JsonResult, writing value of type 'Flyable.StatusCode.CodeResult'.
+2023-10-01 22:51:29.327 +08:00 [INF] Executed action Flyable.Controllers.UserController.UnFollowUser (Flyable) in 147.4059ms
+2023-10-01 22:51:29.329 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.UnFollowUser (Flyable)'
+2023-10-01 22:51:29.330 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/User/UnFollowUser multipart/form-data;+boundary=----WebKitFormBoundaryg1jxh8kXRrwWfC7w 140 - 200 - application/json;+charset=utf-8 214.1481ms
+2023-10-01 22:51:52.844 +08:00 [INF] Application is shutting down...
+2023-10-01 22:51:54.897 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 22:51:54.903 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 22:51:54.903 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 22:51:54.903 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 22:51:54.903 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 22:51:54.903 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 22:51:54.903 +08:00 [INF]           |___/
+2023-10-01 22:51:54.903 +08:00 [INF]                       _ooOoo_
+2023-10-01 22:51:54.903 +08:00 [INF]                      o8888888o
+2023-10-01 22:51:54.903 +08:00 [INF]                      88" . "88
+2023-10-01 22:51:54.903 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 22:51:54.903 +08:00 [INF]                      O\  =  /O
+2023-10-01 22:51:54.903 +08:00 [INF]                   ____/`---'\____
+2023-10-01 22:51:54.903 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 22:51:54.903 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 22:51:54.903 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 22:51:54.903 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 22:51:54.903 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 22:51:54.903 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 22:51:54.903 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 22:51:54.903 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 22:51:54.903 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 22:51:54.903 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 22:51:54.903 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 22:51:54.903 +08:00 [INF]                        `=---='
+2023-10-01 22:51:54.903 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 22:51:54.903 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 22:51:54.929 +08:00 [INF] 当前环境为开发环境
+2023-10-01 22:51:55.020 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 22:51:55.024 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 22:51:55.024 +08:00 [INF] Hosting environment: Development
+2023-10-01 22:51:55.024 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 22:51:55.412 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 22:51:55.468 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 57.0342ms
+2023-10-01 22:51:55.580 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 22:51:55.846 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 266.1788ms
+2023-10-01 22:52:04.901 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/User/UnFollowUser multipart/form-data;+boundary=----WebKitFormBoundaryh81rvMaI5M5MtzJM 140
+2023-10-01 22:52:04.919 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-01 22:52:04.933 +08:00 [INF] CORS policy execution successful.
+2023-10-01 22:52:04.937 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.UnFollowUser (Flyable)'
+2023-10-01 22:52:04.956 +08:00 [INF] Route matched with {action = "UnFollowUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UnFollowUser(Int32) on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 22:52:05.106 +08:00 [INF] Executed action Flyable.Controllers.UserController.UnFollowUser (Flyable) in 147.7804ms
+2023-10-01 22:52:05.108 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.UnFollowUser (Flyable)'
+2023-10-01 22:52:05.116 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Collections.Generic.KeyNotFoundException: The given key 'content' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Flyable.Filters.SensitiveWordDetectFilterAttribute.OnActionExecuting(ActionExecutingContext context) in /Users/sunhao/RiderProjects/Flyable/Flyable/Filters/SensitiveWordDetectFilterAttribute.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-10-01 22:52:05.119 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/User/UnFollowUser multipart/form-data;+boundary=----WebKitFormBoundaryh81rvMaI5M5MtzJM 140 - 500 - text/plain;+charset=utf-8 217.7193ms
+2023-10-01 22:53:53.974 +08:00 [INF] Application is shutting down...
+2023-10-01 22:53:56.089 +08:00 [INF] Flyable后端服务启动中...
+2023-10-01 22:53:56.095 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-01 22:53:56.095 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-01 22:53:56.095 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-01 22:53:56.095 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-01 22:53:56.095 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-01 22:53:56.095 +08:00 [INF]           |___/
+2023-10-01 22:53:56.095 +08:00 [INF]                       _ooOoo_
+2023-10-01 22:53:56.095 +08:00 [INF]                      o8888888o
+2023-10-01 22:53:56.095 +08:00 [INF]                      88" . "88
+2023-10-01 22:53:56.095 +08:00 [INF]                      (| ^_^ |)
+2023-10-01 22:53:56.095 +08:00 [INF]                      O\  =  /O
+2023-10-01 22:53:56.095 +08:00 [INF]                   ____/`---'\____
+2023-10-01 22:53:56.095 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-01 22:53:56.095 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-01 22:53:56.095 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-01 22:53:56.095 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-01 22:53:56.095 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-01 22:53:56.095 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-01 22:53:56.095 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-01 22:53:56.095 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-01 22:53:56.095 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-01 22:53:56.095 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-01 22:53:56.095 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-01 22:53:56.095 +08:00 [INF]                        `=---='
+2023-10-01 22:53:56.095 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-01 22:53:56.095 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-01 22:53:56.121 +08:00 [INF] 当前环境为开发环境
+2023-10-01 22:53:56.213 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-01 22:53:56.216 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-01 22:53:56.217 +08:00 [INF] Hosting environment: Development
+2023-10-01 22:53:56.217 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-01 22:53:56.612 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-01 22:53:56.668 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 56.7846ms
+2023-10-01 22:53:56.784 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-01 22:53:57.029 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 245.3302ms
+2023-10-01 22:54:18.344 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/User/UnFollowUser multipart/form-data;+boundary=----WebKitFormBoundarywmFezUKTyRcAcrNK 140
+2023-10-01 22:54:18.358 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-01 22:54:18.372 +08:00 [INF] CORS policy execution successful.
+2023-10-01 22:54:18.375 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.UnFollowUser (Flyable)'
+2023-10-01 22:54:18.390 +08:00 [INF] Route matched with {action = "UnFollowUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UnFollowUser(Int32) on controller Flyable.Controllers.UserController (Flyable).
+2023-10-01 22:54:18.568 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2023-10-01 22:54:18.571 +08:00 [INF] Executed action Flyable.Controllers.UserController.UnFollowUser (Flyable) in 178.3962ms
+2023-10-01 22:54:18.572 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.UnFollowUser (Flyable)'
+2023-10-01 22:54:18.573 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/User/UnFollowUser multipart/form-data;+boundary=----WebKitFormBoundarywmFezUKTyRcAcrNK 140 - 200 42 text/plain;+charset=utf-8 229.8264ms
+2023-10-01 23:05:41.979 +08:00 [INF] Application is shutting down...
