@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="Masuit.Tools.Core" Version="2.6.2.6"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.12" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7"/>
         <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.11"/>
         <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0"/>
@@ -33,6 +34,7 @@
         <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.2"/>
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0"/>
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2"/>
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.2" />
     </ItemGroup>
 
 

@@ -129,9 +129,6 @@ namespace Flyable.Migrations
                     b.Property<int>("ChapterStatus")
                         .HasColumnType("int");
 
-                    b.Property<int>("CommentCount")
-                        .HasColumnType("int");
-
                     b.Property<string>("Content")
                         .HasColumnType("longtext");
 
@@ -185,14 +182,8 @@ namespace Flyable.Migrations
                     b.Property<bool>("IsTop")
                         .HasColumnType("bit(1)");
 
-                    b.Property<int>("LikeCount")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("PublishTime")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("ReplyCount")
-                        .HasColumnType("int");
 
                     b.Property<int>("ReportCount")
                         .HasColumnType("int");
@@ -338,9 +329,6 @@ namespace Flyable.Migrations
                     b.Property<int>("CollectNums")
                         .HasColumnType("int");
 
-                    b.Property<int>("CommentNums")
-                        .HasColumnType("int");
-
                     b.Property<string>("Cover")
                         .HasColumnType("longtext");
 
@@ -456,25 +444,16 @@ namespace Flyable.Migrations
                     b.Property<bool>("IsHot")
                         .HasColumnType("bit(1)");
 
-                    b.Property<bool>("IsOpenChatRoomMode")
-                        .HasColumnType("bit(1)");
-
                     b.Property<bool>("IsRecommend")
                         .HasColumnType("bit(1)");
 
                     b.Property<bool>("IsTop")
                         .HasColumnType("bit(1)");
 
-                    b.Property<int>("LikeCount")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("PublishTime")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("ReplyCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReportCount")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -579,6 +558,9 @@ namespace Flyable.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("BelongsPostPostId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CommentStatus")
                         .HasColumnType("int");
 
@@ -591,23 +573,11 @@ namespace Flyable.Migrations
                     b.Property<bool>("IsRecommend")
                         .HasColumnType("bit(1)");
 
-                    b.Property<bool>("IsReply")
-                        .HasColumnType("bit(1)");
-
                     b.Property<bool>("IsTop")
                         .HasColumnType("bit(1)");
 
-                    b.Property<int>("LikeCount")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("PublishTime")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("ReplyCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CommentTo")
-                        .HasColumnType("int");
 
                     b.Property<int>("ReportCount")
                         .HasColumnType("int");
@@ -616,6 +586,8 @@ namespace Flyable.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("PostCommentId");
+
+                    b.HasIndex("BelongsPostPostId");
 
                     b.ToTable("PostComments");
                 });
@@ -638,6 +610,49 @@ namespace Flyable.Migrations
                     b.HasKey("TagId");
 
                     b.ToTable("PostTags");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.Reply", b =>
+                {
+                    b.Property<int>("ReplyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ChapterCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("PostCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PublishTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("ReplyTo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReplyType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReportCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ReplyId");
+
+                    b.HasIndex("ChapterCommentId");
+
+                    b.HasIndex("PostCommentId");
+
+                    b.ToTable("Replies");
                 });
 
             modelBuilder.Entity("Flyable.Repositories.Entities.Report", b =>
@@ -678,6 +693,9 @@ namespace Flyable.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("ChapterCommentId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ColorStone")
                         .HasColumnType("int");
 
@@ -708,11 +726,23 @@ namespace Flyable.Migrations
                     b.Property<ushort>("Level")
                         .HasColumnType("smallint unsigned");
 
+                    b.Property<int?>("NovelCommentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NovelCommentId1")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PostCommentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PwdToken")
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("RegisterTime")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<int?>("ReplyId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ReportCount")
                         .HasColumnType("int");
@@ -733,6 +763,16 @@ namespace Flyable.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("ChapterCommentId");
+
+                    b.HasIndex("NovelCommentId");
+
+                    b.HasIndex("NovelCommentId1");
+
+                    b.HasIndex("PostCommentId");
+
+                    b.HasIndex("ReplyId");
 
                     b.HasIndex("WearTagTagId");
 
@@ -821,7 +861,7 @@ namespace Flyable.Migrations
             modelBuilder.Entity("Flyable.Repositories.Entities.ChapterComment", b =>
                 {
                     b.HasOne("Flyable.Repositories.Entities.Chapter", "BelongsChapter")
-                        .WithMany()
+                        .WithMany("ChapterComments")
                         .HasForeignKey("BelongsChapterChapterId");
 
                     b.Navigation("BelongsChapter");
@@ -839,7 +879,7 @@ namespace Flyable.Migrations
             modelBuilder.Entity("Flyable.Repositories.Entities.NovelComment", b =>
                 {
                     b.HasOne("Flyable.Repositories.Entities.Novel", "BelongsNovel")
-                        .WithMany()
+                        .WithMany("NovelComments")
                         .HasForeignKey("BelongsNovelNovelId");
 
                     b.Navigation("BelongsNovel");
@@ -854,8 +894,50 @@ namespace Flyable.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Flyable.Repositories.Entities.PostComment", b =>
+                {
+                    b.HasOne("Flyable.Repositories.Entities.Post", "BelongsPost")
+                        .WithMany("PostComments")
+                        .HasForeignKey("BelongsPostPostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BelongsPost");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.Reply", b =>
+                {
+                    b.HasOne("Flyable.Repositories.Entities.ChapterComment", null)
+                        .WithMany("Replies")
+                        .HasForeignKey("ChapterCommentId");
+
+                    b.HasOne("Flyable.Repositories.Entities.PostComment", null)
+                        .WithMany("Replies")
+                        .HasForeignKey("PostCommentId");
+                });
+
             modelBuilder.Entity("Flyable.Repositories.Entities.User", b =>
                 {
+                    b.HasOne("Flyable.Repositories.Entities.ChapterComment", null)
+                        .WithMany("LikeUsers")
+                        .HasForeignKey("ChapterCommentId");
+
+                    b.HasOne("Flyable.Repositories.Entities.NovelComment", null)
+                        .WithMany("LikeUsers")
+                        .HasForeignKey("NovelCommentId");
+
+                    b.HasOne("Flyable.Repositories.Entities.NovelComment", null)
+                        .WithMany("ReportUsers")
+                        .HasForeignKey("NovelCommentId1");
+
+                    b.HasOne("Flyable.Repositories.Entities.PostComment", null)
+                        .WithMany("LikeUsers")
+                        .HasForeignKey("PostCommentId");
+
+                    b.HasOne("Flyable.Repositories.Entities.Reply", null)
+                        .WithMany("LikeUsers")
+                        .HasForeignKey("ReplyId");
+
                     b.HasOne("Flyable.Repositories.Entities.UserTag", "WearTag")
                         .WithMany()
                         .HasForeignKey("WearTagTagId")
@@ -915,6 +997,47 @@ namespace Flyable.Migrations
                         .HasForeignKey("FollowsUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.Chapter", b =>
+                {
+                    b.Navigation("ChapterComments");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.ChapterComment", b =>
+                {
+                    b.Navigation("LikeUsers");
+
+                    b.Navigation("Replies");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.Novel", b =>
+                {
+                    b.Navigation("NovelComments");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.NovelComment", b =>
+                {
+                    b.Navigation("LikeUsers");
+
+                    b.Navigation("ReportUsers");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.Post", b =>
+                {
+                    b.Navigation("PostComments");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.PostComment", b =>
+                {
+                    b.Navigation("LikeUsers");
+
+                    b.Navigation("Replies");
+                });
+
+            modelBuilder.Entity("Flyable.Repositories.Entities.Reply", b =>
+                {
+                    b.Navigation("LikeUsers");
                 });
 
             modelBuilder.Entity("Flyable.Repositories.Entities.User", b =>

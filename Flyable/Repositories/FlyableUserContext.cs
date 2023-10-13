@@ -32,6 +32,7 @@ public class FlyableUserContext : DbContext
     ~FlyableUserContext() //在析构函数中销毁对象
     {
         SaveChangesAsync();
+
         Dispose();
     }
 }

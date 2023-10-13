@@ -121,7 +121,7 @@ public class User
     public DateTime LastModifyTime { get; set; }
 
     // 上次更改用户状态的管理员id
-    [AllowNull] public int LastModifyAdminId { get; set; }
+    public int LastModifyAdminId { get; set; }
 
     // 被举报次数
     public int ReportCount { get; set; }

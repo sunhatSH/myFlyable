@@ -4,7 +4,7 @@ namespace Flyable.Repositories.Entities;
 
 /// <summary>
 /// 为简单起见,这里的Reply不包含评论,只包含回复，只有评论才有回复，
-/// 回复无法再被回复
+/// 为了防止骂架产生，回复无法再被回复
 /// </summary>
 public class Reply
 {
@@ -13,7 +13,7 @@ public class Reply
     public int ReplyTo { get; set; }
 
     /// <summary>
-    /// 被回复的类型
+    /// 被回复的内容类型 0:小说评论 1:章节评论 2:帖子评论
     /// </summary>
     public int ReplyType { get; set; }
 

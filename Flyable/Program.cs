@@ -4,6 +4,7 @@ using Flyable.Repositories.DataAccess.DataBaseAccess.Access;
 using Flyable.Repositories.DataAccess.DataBaseAccess.IAccess;
 using Flyable.Services.IServices;
 using Flyable.Services.Services;
+using Masuit.Tools.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -87,7 +88,7 @@ builder.Services.AddCors(options => options.AddPolicy(allowMethodsWithPostPutGet
 //TODO:配置JWT
 
 #region 配置JWT
-
+// builder.Services.Add
 #endregion
 
 
