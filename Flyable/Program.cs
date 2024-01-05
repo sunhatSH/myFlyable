@@ -4,7 +4,6 @@ using Flyable.Repositories.DataAccess.DataBaseAccess.Access;
 using Flyable.Repositories.DataAccess.DataBaseAccess.IAccess;
 using Flyable.Services.IServices;
 using Flyable.Services.Services;
-using Masuit.Tools.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -24,7 +23,6 @@ Log.Logger = new LoggerConfiguration()
 builder.Logging.AddSerilog();
 
 #endregion
-
 
 #region 配置Redis缓存
 
@@ -88,7 +86,10 @@ builder.Services.AddCors(options => options.AddPolicy(allowMethodsWithPostPutGet
 //TODO:配置JWT
 
 #region 配置JWT
-// builder.Services.Add
+
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+
 #endregion
 
 
@@ -201,13 +202,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-// app.Use((context, next) =>
-// {
-//     context.Request.EnableBuffering();
-//     return next();
-// });
 app.UseRouting();
 app.UseCors();
 app.UseAuthorization();
+app.MapGet("/", () => "Hello World! ").RequireAuthorization();
 app.MapControllers();
 app.Run();

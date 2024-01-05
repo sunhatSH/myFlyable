@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "If+PBcKxF79hxFF7DTyZdnIYbfoiAGQ857yFHSRoc/yrWg8iqNUEMvxEnr+rGHg4sB3kIBwapz0JZ8s55aaHhw==",
+  "dgSpecHash": "kncgP/iJL+SeIwCE7Eb4lk1bm5zwftRXnFFpg1g/B/0VizPJxsSe4UG8RhObbwUbylJelYBXPyZ488fsH+dmDQ==",
   "success": true,
   "projectFilePath": "/Users/sunhao/RiderProjects/Flyable/Flyable/Flyable.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "/Users/sunhao/.nuget/packages/google.protobuf/3.21.9/google.protobuf.3.21.9.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/htmlsanitizer/8.0.645/htmlsanitizer.8.0.645.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/sunhao/.nuget/packages/jwt/10.1.1/jwt.10.1.1.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/k4os.compression.lz4/1.3.5/k4os.compression.lz4.1.3.5.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/k4os.compression.lz4.streams/1.3.5/k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
     "/Users/sunhao/.nuget/packages/k4os.hash.xxhash/1.0.8/k4os.hash.xxhash.1.0.8.nupkg.sha512",

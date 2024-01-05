@@ -33,15 +33,16 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "default"
         }
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "Masuit.Tools.Core": {
               "target": "Package",
               "version": "[2.6.2.6, )"

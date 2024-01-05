@@ -1,0 +1,134 @@
+2023-10-16 03:30:22.827 +08:00 [INF] Flyable后端服务启动中...
+2023-10-16 03:30:22.835 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-16 03:30:22.836 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-16 03:30:22.836 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-16 03:30:22.836 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-16 03:30:22.836 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-16 03:30:22.836 +08:00 [INF]           |___/
+2023-10-16 03:30:22.836 +08:00 [INF]                       _ooOoo_
+2023-10-16 03:30:22.836 +08:00 [INF]                      o8888888o
+2023-10-16 03:30:22.836 +08:00 [INF]                      88" . "88
+2023-10-16 03:30:22.836 +08:00 [INF]                      (| ^_^ |)
+2023-10-16 03:30:22.836 +08:00 [INF]                      O\  =  /O
+2023-10-16 03:30:22.836 +08:00 [INF]                   ____/`---'\____
+2023-10-16 03:30:22.836 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-16 03:30:22.836 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-16 03:30:22.836 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-16 03:30:22.836 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-16 03:30:22.836 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-16 03:30:22.836 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-16 03:30:22.836 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-16 03:30:22.836 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-16 03:30:22.836 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-16 03:30:22.836 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-16 03:30:22.836 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-16 03:30:22.836 +08:00 [INF]                        `=---='
+2023-10-16 03:30:22.836 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-16 03:30:22.836 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-16 03:30:22.875 +08:00 [INF] 当前环境为开发环境
+2023-10-16 03:30:23.004 +08:00 [INF] User profile is available. Using '/Users/sunhao/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-10-16 03:30:23.028 +08:00 [INF] Creating key {6decd60b-26df-4e22-9a47-07108dc3bafe} with creation date 2023-10-15 19:30:23Z, activation date 2023-10-15 19:30:23Z, and expiration date 2024-01-13 19:30:23Z.
+2023-10-16 03:30:23.033 +08:00 [WRN] No XML encryptor configured. Key {6decd60b-26df-4e22-9a47-07108dc3bafe} may be persisted to storage in unencrypted form.
+2023-10-16 03:30:23.033 +08:00 [INF] Writing data to file '/Users/sunhao/.aspnet/DataProtection-Keys/key-6decd60b-26df-4e22-9a47-07108dc3bafe.xml'.
+2023-10-16 03:30:23.067 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-16 03:30:23.068 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-16 03:30:23.068 +08:00 [INF] Hosting environment: Development
+2023-10-16 03:30:23.068 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-16 03:30:30.034 +08:00 [INF] Application is shutting down...
+2023-10-16 03:30:31.841 +08:00 [INF] Flyable后端服务启动中...
+2023-10-16 03:30:31.847 +08:00 [INF]     _____ _             _     _                               _           _
+2023-10-16 03:30:31.847 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2023-10-16 03:30:31.847 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2023-10-16 03:30:31.847 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2023-10-16 03:30:31.847 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2023-10-16 03:30:31.847 +08:00 [INF]           |___/
+2023-10-16 03:30:31.847 +08:00 [INF]                       _ooOoo_
+2023-10-16 03:30:31.847 +08:00 [INF]                      o8888888o
+2023-10-16 03:30:31.847 +08:00 [INF]                      88" . "88
+2023-10-16 03:30:31.847 +08:00 [INF]                      (| ^_^ |)
+2023-10-16 03:30:31.847 +08:00 [INF]                      O\  =  /O
+2023-10-16 03:30:31.847 +08:00 [INF]                   ____/`---'\____
+2023-10-16 03:30:31.847 +08:00 [INF]                 .'  \\|     |//  `.
+2023-10-16 03:30:31.847 +08:00 [INF]                /  \\|||  :  |||//  \
+2023-10-16 03:30:31.847 +08:00 [INF]               /  _||||| -:- |||||-  \
+2023-10-16 03:30:31.847 +08:00 [INF]               |   | \\\  -  /// |   |
+2023-10-16 03:30:31.847 +08:00 [INF]               | \_|  ''\---/''  |   |
+2023-10-16 03:30:31.847 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2023-10-16 03:30:31.847 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2023-10-16 03:30:31.847 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2023-10-16 03:30:31.847 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2023-10-16 03:30:31.847 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2023-10-16 03:30:31.847 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2023-10-16 03:30:31.847 +08:00 [INF]                        `=---='
+2023-10-16 03:30:31.847 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-10-16 03:30:31.847 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2023-10-16 03:30:31.873 +08:00 [INF] 当前环境为开发环境
+2023-10-16 03:30:31.951 +08:00 [INF] User profile is available. Using '/Users/sunhao/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-10-16 03:30:31.983 +08:00 [INF] Now listening on: http://localhost:5181
+2023-10-16 03:30:31.984 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-16 03:30:31.984 +08:00 [INF] Hosting environment: Development
+2023-10-16 03:30:31.984 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2023-10-16 03:30:48.694 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2023-10-16 03:30:48.749 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-10-16 03:30:48.778 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-16 03:30:48.780 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-16 03:30:48.784 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 90.2092ms
+2023-10-16 03:30:48.823 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/apple-touch-icon-precomposed.png - -
+2023-10-16 03:30:48.826 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/apple-touch-icon-precomposed.png - - - 404 0 - 2.4557ms
+2023-10-16 03:30:48.851 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/apple-touch-icon.png - -
+2023-10-16 03:30:48.851 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/apple-touch-icon.png - - - 404 0 - 0.8595ms
+2023-10-16 03:30:48.856 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/favicon.ico - -
+2023-10-16 03:30:48.856 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/favicon.ico - - - 404 0 - 0.3121ms
+2023-10-16 03:30:51.278 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2023-10-16 03:30:51.284 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-16 03:30:51.285 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-16 03:30:51.285 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 7.2927ms
+2023-10-16 03:55:09.102 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2023-10-16 03:55:09.105 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-16 03:55:09.105 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-16 03:55:09.105 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 3.5305ms
+2023-10-16 03:55:17.565 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2023-10-16 03:55:17.568 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-16 03:55:17.568 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-16 03:55:17.569 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 3.8141ms
+2023-10-16 03:55:20.920 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/PublishComment - -
+2023-10-16 03:55:20.931 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2023-10-16 03:55:20.932 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2023-10-16 03:55:20.932 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/PublishComment - - - 405 0 - 12.3493ms
+2023-10-16 03:55:23.848 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/PublishComment - -
+2023-10-16 03:55:23.856 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2023-10-16 03:55:23.857 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2023-10-16 03:55:23.859 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/PublishComment - - - 405 0 - 11.6188ms
+2023-10-16 03:55:39.598 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2023-10-16 03:55:39.599 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-10-16 03:55:39.599 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-10-16 03:55:39.599 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 1.2878ms
+2023-10-16 03:55:40.381 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2023-10-16 03:55:40.468 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 86.8157ms
+2023-10-16 03:55:40.476 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui.css - -
+2023-10-16 03:55:40.478 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-bundle.js - -
+2023-10-16 03:55:40.488 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-10-16 03:55:40.488 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-10-16 03:55:40.489 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 11.4605ms
+2023-10-16 03:55:40.489 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui.css - - - 200 144929 text/css 13.0987ms
+2023-10-16 03:55:40.586 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2023-10-16 03:55:40.592 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/favicon-32x32.png - -
+2023-10-16 03:55:40.593 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-10-16 03:55:40.593 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/favicon-32x32.png - - - 200 628 image/png 0.5126ms
+2023-10-16 03:55:40.594 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/favicon-16x16.png - -
+2023-10-16 03:55:40.594 +08:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2023-10-16 03:55:40.594 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/favicon-16x16.png - - - 200 665 image/png 0.2085ms
+2023-10-16 03:55:40.809 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 223.4312ms
+2023-10-16 03:55:53.598 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/User/GetVerifyCode - -
+2023-10-16 03:55:53.600 +08:00 [INF] Executing endpoint 'Flyable.Controllers.UserController.GetVerifyCode (Flyable)'
+2023-10-16 03:55:53.615 +08:00 [INF] Route matched with {action = "GetVerifyCode", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetVerifyCode() on controller Flyable.Controllers.UserController (Flyable).
+2023-10-16 03:55:54.421 +08:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-16 03:55:54.426 +08:00 [INF] Executed action Flyable.Controllers.UserController.GetVerifyCode (Flyable) in 809.5288ms
+2023-10-16 03:55:54.427 +08:00 [INF] Executed endpoint 'Flyable.Controllers.UserController.GetVerifyCode (Flyable)'
+2023-10-16 03:55:54.428 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/User/GetVerifyCode - - - 200 - application/json;+charset=utf-8 830.5420ms
+2023-10-21 10:34:35.303 +08:00 [WRN] As of ""2023-10-21T02:34:09.9555110+00:00"", the heartbeat has been running for ""00:00:25.1610360"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.

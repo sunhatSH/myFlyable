@@ -106,3 +106,4 @@
 /Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/JWT.dll

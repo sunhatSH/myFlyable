@@ -74,7 +74,7 @@ public class SelfAuthorizeAttribute : ActionFilterAttribute
             {
                 BaseCode = UserStatusCode.UserLevelNotEnough,
                 Message = "您的等级不足"
-            };
+            }; 
     }
 
     public override void OnActionExecuted(ActionExecutedContext context)
