@@ -1,0 +1,164 @@
+2024-02-11 21:23:01.398 +08:00 [INF] Flyable后端服务启动中...
+2024-02-11 21:23:01.405 +08:00 [INF]     _____ _             _     _                               _           _
+2024-02-11 21:23:01.405 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2024-02-11 21:23:01.405 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2024-02-11 21:23:01.405 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2024-02-11 21:23:01.405 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2024-02-11 21:23:01.405 +08:00 [INF]           |___/
+2024-02-11 21:23:01.405 +08:00 [INF]                       _ooOoo_
+2024-02-11 21:23:01.405 +08:00 [INF]                      o8888888o
+2024-02-11 21:23:01.405 +08:00 [INF]                      88" . "88
+2024-02-11 21:23:01.405 +08:00 [INF]                      (| ^_^ |)
+2024-02-11 21:23:01.405 +08:00 [INF]                      O\  =  /O
+2024-02-11 21:23:01.405 +08:00 [INF]                   ____/`---'\____
+2024-02-11 21:23:01.405 +08:00 [INF]                 .'  \\|     |//  `.
+2024-02-11 21:23:01.405 +08:00 [INF]                /  \\|||  :  |||//  \
+2024-02-11 21:23:01.405 +08:00 [INF]               /  _||||| -:- |||||-  \
+2024-02-11 21:23:01.405 +08:00 [INF]               |   | \\\  -  /// |   |
+2024-02-11 21:23:01.405 +08:00 [INF]               | \_|  ''\---/''  |   |
+2024-02-11 21:23:01.405 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2024-02-11 21:23:01.405 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2024-02-11 21:23:01.405 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2024-02-11 21:23:01.405 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2024-02-11 21:23:01.405 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2024-02-11 21:23:01.405 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2024-02-11 21:23:01.405 +08:00 [INF]                        `=---='
+2024-02-11 21:23:01.405 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-02-11 21:23:01.405 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2024-02-11 21:23:01.448 +08:00 [INF] 当前环境为开发环境
+2024-02-11 21:23:01.680 +08:00 [INF] User profile is available. Using '/Users/sunhao/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-02-11 21:23:02.021 +08:00 [INF] Creating key {429f9406-da5b-49b1-82e1-7472fda72275} with creation date 2024-02-11 13:23:02Z, activation date 2024-02-11 13:23:01Z, and expiration date 2024-05-11 13:23:01Z.
+2024-02-11 21:23:02.026 +08:00 [WRN] No XML encryptor configured. Key {429f9406-da5b-49b1-82e1-7472fda72275} may be persisted to storage in unencrypted form.
+2024-02-11 21:23:02.026 +08:00 [INF] Writing data to file '/Users/sunhao/.aspnet/DataProtection-Keys/key-429f9406-da5b-49b1-82e1-7472fda72275.xml'.
+2024-02-11 21:23:02.054 +08:00 [INF] Now listening on: http://localhost:5181
+2024-02-11 21:23:02.056 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-11 21:23:02.056 +08:00 [INF] Hosting environment: Development
+2024-02-11 21:23:02.056 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2024-02-11 21:23:02.688 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2024-02-11 21:23:03.162 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 474.5086ms
+2024-02-11 21:23:03.219 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui.css - -
+2024-02-11 21:23:03.226 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-bundle.js - -
+2024-02-11 21:23:03.227 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-standalone-preset.js - -
+2024-02-11 21:23:03.267 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-11 21:23:03.268 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-11 21:23:03.269 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-11 21:23:03.271 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 44.4738ms
+2024-02-11 21:23:03.271 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui.css - - - 200 144929 text/css 52.4462ms
+2024-02-11 21:23:03.271 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 43.8720ms
+2024-02-11 21:23:03.462 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2024-02-11 21:23:03.583 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/favicon-32x32.png - -
+2024-02-11 21:23:03.586 +08:00 [INF] The file /favicon-32x32.png was not modified
+2024-02-11 21:23:03.586 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/favicon-32x32.png - - - 304 - image/png 2.5308ms
+2024-02-11 21:23:03.900 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 437.5650ms
+2024-02-11 21:23:11.285 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5181/api/Admin/PublishUserTag - 0
+2024-02-11 21:23:11.294 +08:00 [WRN] Failed to determine the https port for redirect.
+2024-02-11 21:23:11.306 +08:00 [INF] CORS policy execution successful.
+2024-02-11 21:23:11.308 +08:00 [INF] Executing endpoint 'Flyable.Controllers.AdminController.PublishUserTag (Flyable)'
+2024-02-11 21:23:11.326 +08:00 [INF] Route matched with {action = "PublishUserTag", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PublishUserTag(Flyable.Services.ViewModels.UserTagModelView) on controller Flyable.Controllers.AdminController (Flyable).
+2024-02-11 21:23:11.471 +08:00 [INF] Executing JsonResult, writing value of type 'Flyable.StatusCode.CodeResult'.
+2024-02-11 21:23:11.480 +08:00 [INF] Executed action Flyable.Controllers.AdminController.PublishUserTag (Flyable) in 151.1928ms
+2024-02-11 21:23:11.481 +08:00 [INF] Executed endpoint 'Flyable.Controllers.AdminController.PublishUserTag (Flyable)'
+2024-02-11 21:23:11.482 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5181/api/Admin/PublishUserTag - 0 - 200 - application/json;+charset=utf-8 196.1249ms
+2024-02-11 21:23:34.037 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Admin/PublishUserTag - -
+2024-02-11 21:23:34.042 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:23:34.042 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:23:34.043 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Admin/PublishUserTag - - - 405 0 - 5.4164ms
+2024-02-11 21:23:38.457 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Admin/PublishUserTag - -
+2024-02-11 21:23:38.458 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:23:38.458 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:23:38.458 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Admin/PublishUserTag - - - 405 0 - 1.6974ms
+2024-02-11 21:23:53.794 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Admin/PublishUserTag - -
+2024-02-11 21:23:53.795 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:23:53.796 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:23:53.796 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Admin/PublishUserTag - - - 405 0 - 1.3894ms
+2024-02-11 21:24:13.343 +08:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5181/api/Comment/Test/2 application/json 63
+2024-02-11 21:24:13.346 +08:00 [INF] CORS policy execution successful.
+2024-02-11 21:24:13.347 +08:00 [INF] Executing endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2024-02-11 21:24:13.355 +08:00 [INF] Route matched with {action = "Test", controller = "Comment"}. Executing controller action with signature System.String Test(Flyable.Services.ViewModels.CommentModelView, Int32) on controller Flyable.Controllers.CommentController (Flyable).
+2024-02-11 21:24:13.390 +08:00 [INF] Executing action method Flyable.Controllers.CommentController.Test (Flyable) - Validation state: "Valid"
+2024-02-11 21:24:13.394 +08:00 [INF] Executed action method Flyable.Controllers.CommentController.Test (Flyable), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.2789ms.
+2024-02-11 21:24:13.397 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-02-11 21:24:13.398 +08:00 [INF] Executed action Flyable.Controllers.CommentController.Test (Flyable) in 43.0196ms
+2024-02-11 21:24:13.398 +08:00 [INF] Executed endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2024-02-11 21:24:13.398 +08:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5181/api/Comment/Test/2 application/json 63 - 200 - text/plain;+charset=utf-8 55.0220ms
+2024-02-11 21:24:16.025 +08:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5181/api/Comment/Test/2 application/json 63
+2024-02-11 21:24:16.028 +08:00 [INF] CORS policy execution successful.
+2024-02-11 21:24:16.029 +08:00 [INF] Executing endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2024-02-11 21:24:16.029 +08:00 [INF] Route matched with {action = "Test", controller = "Comment"}. Executing controller action with signature System.String Test(Flyable.Services.ViewModels.CommentModelView, Int32) on controller Flyable.Controllers.CommentController (Flyable).
+2024-02-11 21:24:16.033 +08:00 [INF] Executing action method Flyable.Controllers.CommentController.Test (Flyable) - Validation state: "Valid"
+2024-02-11 21:24:16.034 +08:00 [INF] Executed action method Flyable.Controllers.CommentController.Test (Flyable), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0234ms.
+2024-02-11 21:24:16.034 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-02-11 21:24:16.034 +08:00 [INF] Executed action Flyable.Controllers.CommentController.Test (Flyable) in 4.74ms
+2024-02-11 21:24:16.034 +08:00 [INF] Executed endpoint 'Flyable.Controllers.CommentController.Test (Flyable)'
+2024-02-11 21:24:16.034 +08:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5181/api/Comment/Test/2 application/json 63 - 200 - text/plain;+charset=utf-8 10.1814ms
+2024-02-11 21:24:27.416 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/Test/2 - -
+2024-02-11 21:24:27.423 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:24:27.423 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:24:27.423 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/Test/2 - - - 405 0 - 6.9695ms
+2024-02-11 21:24:27.527 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/favicon.ico - -
+2024-02-11 21:24:27.528 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/favicon.ico - - - 404 0 - 1.2164ms
+2024-02-11 21:24:30.782 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/Test/2 - -
+2024-02-11 21:24:30.782 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:24:30.782 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:24:30.782 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/Test/2 - - - 405 0 - 0.4670ms
+2024-02-11 21:25:03.876 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/DeleteComment?commentId=11&targetTypeId=11 - -
+2024-02-11 21:25:03.879 +08:00 [INF] Executing endpoint 'Flyable.Controllers.CommentController.DeleteComment (Flyable)'
+2024-02-11 21:25:03.892 +08:00 [INF] Route matched with {action = "DeleteComment", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteComment(Int32, Int32) on controller Flyable.Controllers.CommentController (Flyable).
+2024-02-11 21:25:03.905 +08:00 [INF] Executing action method Flyable.Controllers.CommentController.DeleteComment (Flyable) - Validation state: "Valid"
+2024-02-11 21:25:03.909 +08:00 [INF] Executed action Flyable.Controllers.CommentController.DeleteComment (Flyable) in 16.415ms
+2024-02-11 21:25:03.909 +08:00 [INF] Executed endpoint 'Flyable.Controllers.CommentController.DeleteComment (Flyable)'
+2024-02-11 21:25:03.914 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 未知目标类型，删除失败
+   at Flyable.Controllers.CommentController.DeleteComment(Int32 commentId, Int32 targetTypeId) in /Users/sunhao/RiderProjects/Flyable/Flyable/Controllers/CommentController.cs:line 89
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-11 21:25:03.916 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/DeleteComment?commentId=11&targetTypeId=11 - - - 500 - text/plain;+charset=utf-8 41.3882ms
+2024-02-11 21:25:17.112 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/DeleteComment?commentId=11&targetTypeId=11 - -
+2024-02-11 21:25:17.113 +08:00 [INF] Executing endpoint 'Flyable.Controllers.CommentController.DeleteComment (Flyable)'
+2024-02-11 21:25:17.113 +08:00 [INF] Route matched with {action = "DeleteComment", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteComment(Int32, Int32) on controller Flyable.Controllers.CommentController (Flyable).
+2024-02-11 21:25:17.116 +08:00 [INF] Executing action method Flyable.Controllers.CommentController.DeleteComment (Flyable) - Validation state: "Valid"
+2024-02-11 21:25:17.117 +08:00 [INF] Executed action Flyable.Controllers.CommentController.DeleteComment (Flyable) in 3.507ms
+2024-02-11 21:25:17.117 +08:00 [INF] Executed endpoint 'Flyable.Controllers.CommentController.DeleteComment (Flyable)'
+2024-02-11 21:25:17.118 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: 未知目标类型，删除失败
+   at Flyable.Controllers.CommentController.DeleteComment(Int32 commentId, Int32 targetTypeId) in /Users/sunhao/RiderProjects/Flyable/Flyable/Controllers/CommentController.cs:line 89
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-11 21:25:17.137 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/DeleteComment?commentId=11&targetTypeId=11 - - - 500 - text/html;+charset=utf-8 24.7505ms
+2024-02-11 21:25:17.235 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/favicon.ico - -
+2024-02-11 21:25:17.236 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/favicon.ico - - - 404 0 - 0.5095ms
+2024-02-11 21:25:29.353 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/favicon.ico - -
+2024-02-11 21:25:29.353 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/favicon.ico - - - 404 0 - 0.7351ms
+2024-02-11 21:33:37.296 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/api/Comment/Test/2 - -
+2024-02-11 21:33:37.299 +08:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:33:37.299 +08:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-02-11 21:33:37.299 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/api/Comment/Test/2 - - - 405 0 - 3.7002ms
+2024-02-13 16:09:30.024 +08:00 [INF] Application is shutting down...
