@@ -1,0 +1,116 @@
+2024-07-06 20:00:57.277 +08:00 [INF] Flyable后端服务启动中...
+2024-07-06 20:00:57.289 +08:00 [INF]     _____ _             _     _                               _           _
+2024-07-06 20:00:57.289 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2024-07-06 20:00:57.289 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2024-07-06 20:00:57.289 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2024-07-06 20:00:57.289 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2024-07-06 20:00:57.289 +08:00 [INF]           |___/
+2024-07-06 20:00:57.289 +08:00 [INF]                       _ooOoo_
+2024-07-06 20:00:57.289 +08:00 [INF]                      o8888888o
+2024-07-06 20:00:57.290 +08:00 [INF]                      88" . "88
+2024-07-06 20:00:57.290 +08:00 [INF]                      (| ^_^ |)
+2024-07-06 20:00:57.290 +08:00 [INF]                      O\  =  /O
+2024-07-06 20:00:57.290 +08:00 [INF]                   ____/`---'\____
+2024-07-06 20:00:57.290 +08:00 [INF]                 .'  \\|     |//  `.
+2024-07-06 20:00:57.290 +08:00 [INF]                /  \\|||  :  |||//  \
+2024-07-06 20:00:57.290 +08:00 [INF]               /  _||||| -:- |||||-  \
+2024-07-06 20:00:57.290 +08:00 [INF]               |   | \\\  -  /// |   |
+2024-07-06 20:00:57.290 +08:00 [INF]               | \_|  ''\---/''  |   |
+2024-07-06 20:00:57.290 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2024-07-06 20:00:57.290 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2024-07-06 20:00:57.291 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2024-07-06 20:00:57.291 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2024-07-06 20:00:57.291 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2024-07-06 20:00:57.291 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2024-07-06 20:00:57.291 +08:00 [INF]                        `=---='
+2024-07-06 20:00:57.291 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-06 20:00:57.291 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2024-07-06 20:00:57.331 +08:00 [INF] 当前环境为开发环境
+2024-07-06 20:00:57.473 +08:00 [INF] User profile is available. Using '/Users/sunhao/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-07-06 20:00:57.500 +08:00 [INF] Creating key {1d1538c7-cb25-4376-a094-ad4d9dc8df1b} with creation date 2024-07-06 12:00:57Z, activation date 2024-07-06 12:00:57Z, and expiration date 2024-10-04 12:00:57Z.
+2024-07-06 20:00:57.505 +08:00 [WRN] No XML encryptor configured. Key {1d1538c7-cb25-4376-a094-ad4d9dc8df1b} may be persisted to storage in unencrypted form.
+2024-07-06 20:00:57.506 +08:00 [INF] Writing data to file '/Users/sunhao/.aspnet/DataProtection-Keys/key-1d1538c7-cb25-4376-a094-ad4d9dc8df1b.xml'.
+2024-07-06 20:00:57.538 +08:00 [INF] Now listening on: http://localhost:5181
+2024-07-06 20:00:57.540 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-06 20:00:57.540 +08:00 [INF] Hosting environment: Development
+2024-07-06 20:00:57.540 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2024-07-06 20:01:09.866 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2024-07-06 20:01:10.248 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 387.3277ms
+2024-07-06 20:01:10.282 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-bundle.js - -
+2024-07-06 20:01:10.283 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui.css - -
+2024-07-06 20:01:10.288 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-standalone-preset.js - -
+2024-07-06 20:01:10.341 +08:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2024-07-06 20:01:10.341 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-standalone-preset.js - - - 304 - text/javascript 52.7135ms
+2024-07-06 20:01:10.344 +08:00 [INF] The file /swagger-ui.css was not modified
+2024-07-06 20:01:10.344 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui.css - - - 304 - text/css 61.1164ms
+2024-07-06 20:01:10.346 +08:00 [INF] The file /swagger-ui-bundle.js was not modified
+2024-07-06 20:01:10.352 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/swagger-ui-bundle.js - - - 304 - text/javascript 70.0115ms
+2024-07-06 20:01:10.468 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2024-07-06 20:01:10.580 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/favicon-32x32.png - -
+2024-07-06 20:01:10.581 +08:00 [INF] The file /favicon-32x32.png was not modified
+2024-07-06 20:01:10.581 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/favicon-32x32.png - - - 304 - image/png 1.0316ms
+2024-07-06 20:01:10.795 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 327.5601ms
+2024-07-06 20:01:32.805 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2024-07-06 20:01:32.815 +08:00 [WRN] Failed to determine the https port for redirect.
+2024-07-06 20:01:32.837 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-07-06 20:01:32.840 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-07-06 20:01:32.841 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 35.8292ms
+2024-07-06 20:01:44.406 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2024-07-06 20:01:44.409 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-07-06 20:01:44.409 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-07-06 20:01:44.410 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 3.2315ms
+2024-07-06 20:02:17.010 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2024-07-06 20:02:17.013 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 2.3587ms
+2024-07-06 20:02:17.104 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2024-07-06 20:02:17.112 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.8477ms
+2024-07-06 20:02:23.048 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2024-07-06 20:02:23.050 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-07-06 20:02:23.051 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-07-06 20:02:23.051 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 401 0 - 3.1759ms
+2024-07-06 20:02:43.500 +08:00 [INF] Application is shutting down...
+2024-07-06 20:02:47.198 +08:00 [INF] Flyable后端服务启动中...
+2024-07-06 20:02:47.209 +08:00 [INF]     _____ _             _     _                               _           _
+2024-07-06 20:02:47.209 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2024-07-06 20:02:47.209 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2024-07-06 20:02:47.209 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2024-07-06 20:02:47.209 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2024-07-06 20:02:47.209 +08:00 [INF]           |___/
+2024-07-06 20:02:47.209 +08:00 [INF]                       _ooOoo_
+2024-07-06 20:02:47.209 +08:00 [INF]                      o8888888o
+2024-07-06 20:02:47.209 +08:00 [INF]                      88" . "88
+2024-07-06 20:02:47.209 +08:00 [INF]                      (| ^_^ |)
+2024-07-06 20:02:47.209 +08:00 [INF]                      O\  =  /O
+2024-07-06 20:02:47.209 +08:00 [INF]                   ____/`---'\____
+2024-07-06 20:02:47.209 +08:00 [INF]                 .'  \\|     |//  `.
+2024-07-06 20:02:47.209 +08:00 [INF]                /  \\|||  :  |||//  \
+2024-07-06 20:02:47.209 +08:00 [INF]               /  _||||| -:- |||||-  \
+2024-07-06 20:02:47.209 +08:00 [INF]               |   | \\\  -  /// |   |
+2024-07-06 20:02:47.209 +08:00 [INF]               | \_|  ''\---/''  |   |
+2024-07-06 20:02:47.209 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2024-07-06 20:02:47.209 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2024-07-06 20:02:47.209 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2024-07-06 20:02:47.209 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2024-07-06 20:02:47.209 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2024-07-06 20:02:47.209 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2024-07-06 20:02:47.209 +08:00 [INF]                        `=---='
+2024-07-06 20:02:47.209 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-06 20:02:47.209 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2024-07-06 20:02:47.242 +08:00 [INF] 当前环境为开发环境
+2024-07-06 20:02:47.349 +08:00 [INF] User profile is available. Using '/Users/sunhao/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-07-06 20:02:47.399 +08:00 [INF] Now listening on: http://localhost:5181
+2024-07-06 20:02:47.401 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-06 20:02:47.401 +08:00 [INF] Hosting environment: Development
+2024-07-06 20:02:47.401 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2024-07-06 20:02:48.050 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/index.html - -
+2024-07-06 20:02:48.140 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/index.html - - - 200 - text/html;charset=utf-8 91.0630ms
+2024-07-06 20:02:48.199 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - -
+2024-07-06 20:02:48.440 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 240.5779ms
+2024-07-06 20:06:16.361 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5181/ - -
+2024-07-06 20:06:16.371 +08:00 [WRN] Failed to determine the https port for redirect.
+2024-07-06 20:06:16.387 +08:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-07-06 20:06:16.387 +08:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-07-06 20:06:16.387 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5181/ - - - 200 - text/plain;+charset=utf-8 26.8421ms
+2024-07-07 13:12:24.993 +08:00 [INF] Application is shutting down...
