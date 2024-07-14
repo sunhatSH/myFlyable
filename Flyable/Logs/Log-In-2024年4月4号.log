@@ -1,0 +1,50 @@
+2024-04-04 20:15:05.183 +08:00 [INF] Flyable后端服务启动中...
+2024-04-04 20:15:05.190 +08:00 [INF]     _____ _             _     _                               _           _
+2024-04-04 20:15:05.190 +08:00 [INF]     |  ___| |_   _  __ _| |__ | | ___          ___ _   _ _ __ | |__   __ _| |_
+2024-04-04 20:15:05.190 +08:00 [INF]     | |_  | | | | |/ _` | '_ \| |/ _ \        / __| | | | '_ \| '_ \ / _` | __|
+2024-04-04 20:15:05.190 +08:00 [INF]     |  _| | | |_| | (_| | |_) | |  __/        \__ \ |_| | | | | | | | (_| | |_
+2024-04-04 20:15:05.190 +08:00 [INF]     |_|   |_|\__, |\__,_|_.__/|_|\___|        |___/\__,_|_| |_|_| |_|\__,_|\__|
+2024-04-04 20:15:05.190 +08:00 [INF]           |___/
+2024-04-04 20:15:05.190 +08:00 [INF]                       _ooOoo_
+2024-04-04 20:15:05.190 +08:00 [INF]                      o8888888o
+2024-04-04 20:15:05.190 +08:00 [INF]                      88" . "88
+2024-04-04 20:15:05.190 +08:00 [INF]                      (| ^_^ |)
+2024-04-04 20:15:05.190 +08:00 [INF]                      O\  =  /O
+2024-04-04 20:15:05.190 +08:00 [INF]                   ____/`---'\____
+2024-04-04 20:15:05.190 +08:00 [INF]                 .'  \\|     |//  `.
+2024-04-04 20:15:05.190 +08:00 [INF]                /  \\|||  :  |||//  \
+2024-04-04 20:15:05.190 +08:00 [INF]               /  _||||| -:- |||||-  \
+2024-04-04 20:15:05.190 +08:00 [INF]               |   | \\\  -  /// |   |
+2024-04-04 20:15:05.190 +08:00 [INF]               | \_|  ''\---/''  |   |
+2024-04-04 20:15:05.190 +08:00 [INF]               \  .-\__  `-`  ___/-. /
+2024-04-04 20:15:05.190 +08:00 [INF]             ___`. .'  /--.--\  `. . ___
+2024-04-04 20:15:05.190 +08:00 [INF]           ."" '<  `.___\_<|>_/___.'  >'"".
+2024-04-04 20:15:05.190 +08:00 [INF]         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+2024-04-04 20:15:05.190 +08:00 [INF]         \  \ `-.   \_ __\ /__ _/   .-` /  /
+2024-04-04 20:15:05.190 +08:00 [INF]   ========`-.____`-.___\_____/___.-`____.-'========
+2024-04-04 20:15:05.190 +08:00 [INF]                        `=---='
+2024-04-04 20:15:05.190 +08:00 [INF]   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-04-04 20:15:05.190 +08:00 [INF]      佛祖保佑       永无BUG     永不修改
+2024-04-04 20:15:05.246 +08:00 [INF] 当前环境为开发环境
+2024-04-04 20:15:05.449 +08:00 [INF] User profile is available. Using '/Users/sunhao/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 20:15:06.136 +08:00 [INF] Now listening on: https://localhost:7087
+2024-04-04 20:15:06.137 +08:00 [INF] Now listening on: http://localhost:5181
+2024-04-04 20:15:06.139 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 20:15:06.140 +08:00 [INF] Hosting environment: Development
+2024-04-04 20:15:06.141 +08:00 [INF] Content root path: /Users/sunhao/RiderProjects/Flyable/Flyable
+2024-04-04 20:15:06.339 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7087/ - -
+2024-04-04 20:15:06.417 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-04 20:15:06.419 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-04 20:15:06.425 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7087/ - - - 401 0 - 87.2030ms
+2024-04-04 20:15:06.489 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7087/favicon.ico - -
+2024-04-04 20:15:06.492 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7087/favicon.ico - - - 404 0 - 2.9477ms
+2024-04-04 20:15:06.575 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7087/apple-touch-icon-precomposed.png - -
+2024-04-04 20:15:06.576 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7087/apple-touch-icon-precomposed.png - - - 404 0 - 1.0161ms
+2024-04-04 20:15:06.612 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7087/apple-touch-icon.png - -
+2024-04-04 20:15:06.618 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7087/apple-touch-icon.png - - - 404 0 - 6.3954ms
+2024-04-04 20:15:09.182 +08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7087/ - -
+2024-04-04 20:15:09.185 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-04-04 20:15:09.187 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-04 20:15:09.188 +08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7087/ - - - 401 0 - 6.1543ms
