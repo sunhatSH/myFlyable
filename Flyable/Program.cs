@@ -16,8 +16,8 @@ var builder = WebApplication.CreateBuilder(args);
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .MinimumLevel.Debug()
-    .WriteTo.File(
-        $"{builder.Configuration["LogPath"]}/Log-In-{DateTime.Today.Year}年{DateTime.Today.Month}月{DateTime.Today.Day}号.log")
+    .WriteTo.File($"{builder.Configuration["LogPath"]}" +
+                  $"/Log-In-{DateTime.Today.Year}年{DateTime.Today.Month}月.log")
     .MinimumLevel.Information()
     .CreateLogger();
 builder.Logging.AddSerilog();
@@ -91,7 +91,6 @@ builder.Services.AddAuthorization();
 builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 
 #endregion
-
 
 #region 启动信息
 
@@ -200,11 +199,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors();
 app.UseAuthorization();
-app.MapGet("/", () => "Hello World! ").RequireAuthorization();
+app.MapGet("/", () => "Hello World! ");
 app.MapControllers();
 app.Run();

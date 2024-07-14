@@ -76,7 +76,6 @@
 /Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/staticwebassets.build.json
 /Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/staticwebassets.development.json
 /Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/scopedcss/bundle/Flyable.styles.css
-/Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/Flyable.csproj.CopyComplete
 /Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/Flyable.dll
 /Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/refint/Flyable.dll
 /Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/Flyable.pdb
@@ -107,3 +106,7 @@
 /Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/JWT.dll
+/Users/sunhao/RiderProjects/Flyable/Flyable/bin/Debug/net7.0/Flyable.staticwebassets.endpoints.json
+/Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/staticwebassets.build.endpoints.json
+/Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/staticwebassets/msbuild.Flyable.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/sunhao/RiderProjects/Flyable/Flyable/obj/Debug/net7.0/Flyable.csproj.Up2Date
