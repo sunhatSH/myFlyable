@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title data-i18n="modifyEmail.title">修改邮箱 - Flyable</title>
+	<link href="css/login.css" rel="stylesheet">
+	<link href="css/animations.css" rel="stylesheet">
+	<link href="css/wings-animation.css" rel="stylesheet">
+	<link href="css/modal.css" rel="stylesheet">
+	<script src="js/dist/config.js"></script>
+	<script src="js/dist/i18n.js"></script>
+	<script src="js/dist/modal.js"></script>
+</head>
+
+<body>
+<div class="language-switch">
+	<button id="languageSwitch" class="lang-btn" data-i18n="common.switchToEn"
+	        onclick="setLanguage(getCurrentLanguage() === 'zh' ? 'en' : 'zh')">English
+	</button>
+</div>
+<div class="center-wrapper">
+	<div id="draggable-card" class="container">
+		<div class="animated-title">
+			<div class="main-title golden-text frosted-gold-text">Flyable</div>
+			<div class="sub-title frosted-gold-text"
+			     style="text-align:center;font-size:2em;font-weight:bold;margin-top:10px;">修改邮箱
+			</div>
+		</div>
+		<form id="modifyEmailForm">
+			<div class="form-group">
+				<input id="email" data-i18n-placeholder="modifyEmail.email" name="email" placeholder="新邮箱" required
+				       type="email">
+			</div>
+			<div class="form-group">
+				<input id="verifyCode" data-i18n-placeholder="modifyEmail.verifyCode" name="verifyCode"
+				       placeholder="验证码" required
+				       type="text">
+			</div>
+			<button class="btn btn-primary frosted-gold-text" data-i18n="modifyEmail.submit" type="submit">修改邮箱
+			</button>
+		</form>
+		<div id="message" class="frosted-gold-text"></div>
+		<div class="nav-links">
+			<a class="frosted-gold-text" data-i18n="modifyEmail.back" href="login.html">返回登录</a>
+		</div>
+	</div>
+</div>
+
+<script src="js/dist/user.js"></script>
+<script>
+	let currentGuid = '';
+	
+	document.getElementById('getVerifyCodeBtn').addEventListener('click', async () => {
+		try {
+			currentGuid = generateGuid();
+			const verifyCode = await getVerifyCode('modify_email');
+			showMessage('message', 'Verification code: ' + verifyCode);
+		} catch (error) {
+			showMessage('message', 'Failed to get verification code', true);
+		}
+	});
+	
+	document.getElementById('modifyEmailForm').addEventListener('submit', async (e) => {
+		e.preventDefault();
+		
+		const username = document.getElementById('username').value;
+		const password = document.getElementById('password').value;
+		const newEmail = document.getElementById('newEmail').value;
+		const verifyCode = document.getElementById('verifyCode').value;
+		
+		try {
+			const response = await fetch(`${API_BASE_URL}/modify_email`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					username,
+					pwdToken: password,
+					newEmail,
+					verifyCode,
+					guid: currentGuid
+				})
+			});
+			
+			if (response.ok) {
+				showMessage('message', 'Email modified successfully!');
+			} else {
+				const error = await response.json();
+				showMessage('message', 'Email modification failed: ' + error.message, true);
+			}
+		} catch (error) {
+			showMessage('message', 'Email modification failed: ' + error.message, true);
+		}
+	});
+	
+	// 页面加载时初始化语言
+	document.addEventListener('DOMContentLoaded', function () {
+		updatePageLanguage();
+	});
+</script>
+<script src="js/dist/drag-card.js"></script>
+</body>
+
+</html>

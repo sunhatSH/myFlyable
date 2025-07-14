@@ -1,16 +1,35 @@
+#pragma warning disable CS8981 // 该类型名称仅包含小写 ascii 字符。此类名称可能会成为该语言的保留值。
+global using bytes = byte[];
+#pragma warning restore CS8981 // 该类型名称仅包含小写 ascii 字符。此类名称可能会成为该语言的保留值。
+using System.Globalization;
+using Flyable;
+using Flyable.Actions;
 using Flyable.Extensions;
-using Flyable.Repositories;
-using Flyable.Repositories.DataAccess.DataBaseAccess.Access;
-using Flyable.Repositories.DataAccess.DataBaseAccess.IAccess;
-using Flyable.Services.IServices;
-using Flyable.Services.Services;
+using Flyable.Services;
+using Flyable.ThirdParty;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
+#region 配置HttpClient
+builder.Services.AddHttpClient();
+#endregion
+#region 配置ThirdPartyService
+builder.Services.AddScoped<IThirdPartyService, WeChatService>();
+builder.Services.AddScoped<IThirdPartyService, QQService>();
+builder.Services.AddScoped<IThirdPartyService, GitHubService>();
+builder.Services.AddScoped<IThirdPartyService, GoogleService>();
+builder.Services.AddScoped<IThirdPartyService, MicrosoftService>();
+builder.Services.AddScoped<IThirdPartyService, AppleService>();
+builder.Services.AddScoped<ThirdPartyAccountService>();
+builder.Services.AddScoped<VerifyCodeService>();
+#endregion
 #region 配置日志
 
 Log.Logger = new LoggerConfiguration()
@@ -36,7 +55,6 @@ builder.Services.AddStackExchangeRedisCache(options =>
 #endregion
 
 #region 配置Swagger
-
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1",
@@ -60,8 +78,6 @@ builder.Services.AddSwaggerGen(c =>
 
 const string allowAllPolicy = "allowAllPolicy";
 const string allowMethodsWithPostPutGet = "allowMethodsWithPostPutGet";
-
-
 builder.Services.AddCors(options => options.AddDefaultPolicy( //默认策略,只允许本地的80和443端口访问,允许任何请求头,允许任何方法
     policyBuilder =>
     {
@@ -83,12 +99,23 @@ builder.Services.AddCors(options => options.AddPolicy(allowMethodsWithPostPutGet
 
 #endregion
 
-//TODO:配置JWT
-
 #region 配置JWT
 
+// 临时注释JWT配置以便测试
+// builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your_secret_key_here"))
+        };
+    });
 builder.Services.AddAuthorization();
-builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 
 #endregion
 
@@ -149,39 +176,22 @@ var connStr = builder.Configuration["ConnectionStrings:DefaultConnection"];
 
 #region 数据库上下文注入
 
-builder.Services.AddDbContext<FlyableUserContext>(optionsBuilder
-    =>
+builder.Services.AddDbContext<FlyableUserContext>(optionsBuilder =>
 {
     // 配置标准日志，执行EFCore时会在控制台打印对应的SQL语句
-    var myLoggerFactory = LoggerFactory.Create(loggingBuilder => loggingBuilder.AddConsole());
+    var myLoggerFactory = LoggerFactory.Create(loggingBuilder => loggingBuilder
+        .AddConsole()
+        .AddSerilog());
     optionsBuilder.UseLoggerFactory(myLoggerFactory);
     optionsBuilder.UseMySql(connStr, new MySqlServerVersion(new Version(8, 0, 33)));
 });
 
 #endregion
 
-#region Service依赖注入
-
-builder.Services
-    .AddScoped<IUserBaseService, UserBaseService>()
-    .AddScoped<IAdminService, AdminService>()
-    .AddScoped<IEditorService, EditorService>()
-    .AddScoped<INovelService, NovelService>()
-    .AddScoped<IPostService, PostService>()
-    .AddScoped<ICommentService, CommentService>();
-
-#endregion
-
-#region 数据仓储层依赖注入
-
-builder.Services
-    .AddScoped<IUserBaseAccess, UserBaseAccess>()
-    .AddScoped<IAdminAccess, AdminAccess>()
-    .AddScoped<IEditorAccess, EditorAccess>()
-    .AddScoped<INovelAccess, NovelAccess>()
-    .AddScoped<IPostAccess, PostAccess>()
-    .AddScoped<ICommentAccess, CommentAccess>();
-
+#region Actions依赖注入
+builder.Services.AddScoped<UserAction>();
+builder.Services.AddScoped<NovelAction>();
+builder.Services.AddScoped<ForumAction>();
 #endregion
 
 // Add services to the container.
@@ -192,17 +202,28 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
+#if DEBUG
 if (app.Environment.IsDevelopment())
 {
     Log.Information("当前环境为开发环境");
-
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+#endif
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+    var currentTimeUtc = DateTime.UtcNow.ToString(CultureInfo.InvariantCulture);
+    var encodedCurrentTimeUtc = System.Text.Encoding.UTF8.GetBytes(currentTimeUtc);
+    var options = new DistributedCacheEntryOptions()
+        .SetSlidingExpiration(TimeSpan.FromSeconds(20));
+    app.Services.GetService<IDistributedCache>()
+        ?.Set("cachedTimeUTC", encodedCurrentTimeUtc, options);
+});
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors();
-app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization(); // 启用授权中间件，修复评分接口 500 错误
 app.MapGet("/", () => "Hello World! ");
 app.MapControllers();
 app.Run();

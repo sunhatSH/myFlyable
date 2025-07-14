@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>小说详情 - Flyable</title>
+    <link href="css/user.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+    <script src="js/dist/config.js"></script>
+    <script src="js/dist/user.js"></script>
+    <script src="js/dist/modal.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.5) 0%, rgba(22, 33, 62, 0.5) 30%, rgba(15, 52, 96, 0.5) 100%),
+                url('/wwwroot/img/wing-bg.jpg') center center/cover no-repeat;
+            background-attachment: fixed;
+            color: #e0e0e0;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(92deg, #b8860b 10%, #daa520 40%, #cd853f 60%, #b8860b 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 4px rgba(184, 134, 11, 0.8), 0 1px 0 #fffbe3;
+            background-color: rgba(230, 201, 122, 0.2);
+            font-weight: 700;
+        }
+
+        .user-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(120deg, #fffbe3 10%, #f7e7b4 30%, #e6c97a 50%, #bfa14a 70%, #fffbe3 90%);
+            color: #8b6914;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid #e6c97a;
+            box-shadow: 0 2px 8px rgba(230, 201, 122, 0.3);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+            filter: blur(0.2px) contrast(1.1) brightness(1.05);
+            animation: goldshine 2.5s linear infinite;
+        }
+
+        .back-btn {
+            background: rgba(230, 201, 122, 0.1);
+            border: 1px solid #e6c97a;
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background-color: rgba(230, 201, 122, 0.1);
+        }
+
+        .back-btn:hover {
+            background-color: rgba(230, 201, 122, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(230, 201, 122, 0.3);
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .novel-header {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .novel-info {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .novel-cover {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(120deg, #fffbe3 10%, #f7e7b4 30%, #e6c97a 50%, #bfa14a 70%, #fffbe3 90%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b6914;
+            font-size: 16px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border: 2px solid #e6c97a;
+            box-shadow: 0 4px 15px rgba(230, 201, 122, 0.2);
+        }
+
+        .novel-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .novel-details {
+            flex: 1;
+        }
+
+        .novel-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e0e0e0;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .novel-author {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .novel-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #b0b0b0;
+            font-weight: 500;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .rating-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+        }
+
+        .star {
+            font-size: 20px;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .star.active,
+        .star:hover {
+            color: #ffd700;
+        }
+
+        .rate-btn {
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+            border: 1px solid #e6c97a;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background-color: rgba(230, 201, 122, 0.1);
+        }
+
+        .rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(230, 201, 122, 0.3);
+            background-color: rgba(230, 201, 122, 0.2);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+            border: 1px solid #e6c97a;
+            background-color: rgba(230, 201, 122, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(230, 201, 122, 0.1);
+            border: 1px solid #e6c97a;
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+            background-color: rgba(230, 201, 122, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 描述区域 */
+        .novel-description {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(120deg, #fffbe3 10%, #f7e7b4 30%, #e6c97a 50%, #bfa14a 70%, #fffbe3 90%);
+            border-radius: 2px;
+        }
+
+        .description-text {
+            line-height: 1.8;
+            color: #666;
+            font-size: 16px;
+            white-space: pre-line;
+        }
+
+        /* 章节列表 */
+        .chapters-section {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .chapter-item {
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chapter-item:hover {
+            border-color: #e6c97a;
+            background: rgba(230, 201, 122, 0.05);
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(230, 201, 122, 0.2);
+        }
+
+        .chapter-title {
+            color: #e0e0e0;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .chapter-meta {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* 评论区域 */
+        .comments-section {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .comment-form {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .comment-textarea {
+            width: 100%;
+            min-height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 14px;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        .comment-textarea:focus {
+            outline: none;
+            border-color: #e6c97a;
+            box-shadow: 0 0 8px rgba(230, 201, 122, 0.3);
+        }
+
+        .comment-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .char-count {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .comments-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .comment-item {
+            border: none;
+            padding: 0;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .comment-bubble {
+            background: linear-gradient(135deg, rgba(255, 236, 160, 0.60) 60%, rgba(255, 245, 200, 0.85) 100%);
+            backdrop-filter: blur(8px);
+            border-radius: 18px 18px 18px 6px;
+            box-shadow: 0 6px 24px 0 rgba(255, 236, 160, 0.18), 0 2px 0 0 rgba(255, 245, 200, 0.18);
+            padding: 18px 24px 16px 24px;
+            max-width: 80%;
+            min-width: 180px;
+            position: relative;
+            margin-left: 0;
+            margin-right: auto;
+            transition: box-shadow 0.2s;
+        }
+
+        .comment-bubble:hover {
+            box-shadow: 0 12px 36px 0 rgba(255, 236, 160, 0.28), 0 4px 0 0 rgba(255, 245, 200, 0.28);
+        }
+
+        .comment-header {
+            margin-bottom: 8px;
+        }
+
+        .comment-user {
+            font-weight: 700;
+            color: #b08d1a;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2px 10px;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        .comment-time {
+            color: #7c6a3a;
+            font-size: 12px;
+        }
+
+        .comment-content {
+            color: #222;
+            font-size: 17px;
+            word-break: break-word;
+        }
+
+        @media (max-width: 600px) {
+            .comment-bubble {
+                max-width: 98%;
+                padding: 14px 10px 12px 10px;
+            }
+        }
+
+        /* 加载状态 */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #e6c97a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes goldshine {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .novel-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .novel-cover {
+                width: 160px;
+                height: 200px;
+            }
+
+            .novel-title {
+                font-size: 24px;
+            }
+
+            .action-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="index.html">
+                🕊️ Flyable
+            </a>
+            <ul class="navbar-nav">
+                <li><a class="nav-link" href="index.html">首页</a></li>
+                <li><a class="nav-link" href="forum.html">论坛</a></li>
+                <li><a class="nav-link" href="novel-management.html">创作中心</a></li>
+                <li><a class="nav-link" href="collections.html">收藏页</a></li>
+                <li class="user-menu">
+                    <div class="user-avatar" onclick="goToProfile()" title="个人资料">
+                        <span id="userInitial">U</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 小说头部信息 -->
+        <div class="novel-header">
+            <div id="novelLoading" class="loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>加载中...</p>
+            </div>
+            <div id="novelInfo" style="display: none;">
+                <!-- 小说信息将通过JavaScript动态加载 -->
+            </div>
+        </div>
+
+        <!-- 小说描述 -->
+        <div class="novel-description">
+            <h3 class="section-title">作品简介</h3>
+            <div id="novelDescription" class="description-text">
+                <!-- 描述内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+
+        <!-- 章节列表 -->
+        <div class="chapters-section">
+            <h3 class="section-title">章节列表</h3>
+            <div id="chaptersLoading" class="loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>加载章节中...</p>
+            </div>
+            <div id="chaptersList" class="chapters-grid">
+                <!-- 章节列表将通过JavaScript动态加载 -->
+            </div>
+        </div>
+
+        <!-- 评论区域 -->
+        <div class="comments-section">
+            <h3 class="section-title">读者评论</h3>
+
+            <!-- 评论表单 -->
+            <div class="comment-form">
+                <textarea id="commentInput" class="comment-textarea" maxlength="500" placeholder="写下你的想法..."></textarea>
+                <div class="comment-actions">
+                    <span class="char-count">
+                        <span id="charCount">0</span>/500
+                    </span>
+                    <button class="btn btn-primary" onclick="submitComment()">
+                        📝 发表评论
+                    </button>
+                </div>
+            </div>
+
+            <!-- 评论列表 -->
+            <div id="commentsLoading" class="loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>加载评论中...</p>
+            </div>
+            <div id="commentsList" class="comments-list">
+                <!-- 评论列表将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+    <script>
+        // 全局变量
+        let currentNovel = null;
+        let currentUser = null;
+        let novelId = null;
+        let userRating = 0;
+        let chapters = [];
+
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', function () {
+            // 从URL获取小说ID
+            const urlParams = new URLSearchParams(window.location.search);
+            novelId = urlParams.get('id');
+
+            if (!novelId) {
+                showError('小说ID不存在');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+                return;
+            }
+
+            // 检查登录状态
+            checkLoginStatus();
+
+            // 加载小说详情
+            loadNovelDetail();
+            loadComments();
+
+            // 评论字数统计
+            const commentInput = document.getElementById('commentInput');
+            const charCount = document.getElementById('charCount');
+
+            commentInput.addEventListener('input', function () {
+                charCount.textContent = this.value.length;
+            });
+        });
+
+        // 检查登录状态
+        function checkLoginStatus() {
+            const token = localStorage.getItem('token');
+            const userInfo = localStorage.getItem('userInfo');
+
+            if (userInfo) {
+                currentUser = JSON.parse(userInfo);
+                updateUserDisplay();
+            }
+        }
+
+        // 更新用户显示
+        function updateUserDisplay() {
+            if (currentUser && currentUser.username) {
+                const userInitial = document.getElementById('userInitial');
+                if (userInitial) {
+                    userInitial.textContent = currentUser.username.charAt(0).toUpperCase();
+                }
+            }
+        }
+
+        // 跳转到个人资料页面
+        function goToProfile() {
+            window.location.href = 'profile.html';
+        }
+
+        // 加载小说详情
+        async function loadNovelDetail() {
+            const loadingEl = document.getElementById('novelLoading');
+            const infoEl = document.getElementById('novelInfo');
+            const descriptionEl = document.getElementById('novelDescription');
+
+            loadingEl.style.display = 'block';
+
+            try {
+                let userIdParam = currentUser ? `?userId=${currentUser.userId}` : '';
+                const response = await fetch(`${API_BASE_URL}/novel/${novelId}/detail${userIdParam}`);
+                const result = await response.json();
+
+                if (result.success && result.data) {
+                    currentNovel = result.data.novel;
+                    chapters = result.data.chapters;
+
+                    document.title = `${currentNovel.title} - Flyable`;
+
+                    // 渲染小说信息
+                    let likeBtnHtml = '';
+                    if (currentNovel.isLiked) {
+                        likeBtnHtml = '<button class="btn btn-secondary" id="likeBtn" onclick="likeNovel()">👍 已点赞 <span id="likeCount">' + (currentNovel.likeNums || 0) + '</span></button>';
+                    } else {
+                        likeBtnHtml = '<button class="btn btn-secondary" id="likeBtn" onclick="likeNovel()">👍 点赞 <span id="likeCount">' + (currentNovel.likeNums || 0) + '</span></button>';
+                    }
+                    // 渲染评分区
+                    let ratingSectionHtml = '';
+                    if (result.data.userRating) {
+                        ratingSectionHtml = `<div class="rating-section"><span>你已评分：</span><div class="stars">${[1, 2, 3, 4, 5].map(i => `<span class="star ${i <= result.data.userRating ? 'active' : ''}">${i <= result.data.userRating ? '★' : '☆'}</span>`).join('')}</div><span style='margin-left:8px;'>${result.data.userRating}分</span></div>`;
+                    } else {
+                        ratingSectionHtml = `<div class="rating-section"><span>为这本书评分：</span><div class="stars">${[1, 2, 3, 4, 5].map(i => `<span class="star ${i <= userRating ? 'active' : ''}" onclick="setRating(${i})">${i <= userRating ? '★' : '☆'}</span>`).join('')}</div><button class="rate-btn" onclick="submitRating()">提交评分</button></div>`;
+                    }
+                    // 渲染收藏按钮
+                    let collectBtnHtml = '';
+                    if (currentNovel.isCollected) {
+                        collectBtnHtml = `<button class="btn btn-secondary" id="collectBtn" onclick="toggleCollect()">💔 已收藏</button>`;
+                    } else {
+                        collectBtnHtml = `<button class="btn btn-secondary" id="collectBtn" onclick="toggleCollect()">❤️ 加入收藏</button>`;
+                    }
+                    infoEl.innerHTML = `
+                        <div class="novel-info">
+                            <div class="novel-cover">
+                                ${currentNovel.cover ? `<img src="${currentNovel.cover}" alt="${currentNovel.title}">` : '📖'}
+                            </div>
+                            <div class="novel-details">
+                                <h1 class="novel-title">${currentNovel.title}</h1>
+                                <div class="novel-author">作者：${currentNovel.authorName}</div>
+                                <div class="novel-meta">
+                                    <div class="meta-item"><span>📊</span><span>评分：${currentNovel.score} (${result.data.scorePeopleNum}人评价)</span></div>
+                                    <div class="meta-item"><span>👁</span><span>点击：${formatNumber(currentNovel.totalClicks)}</span></div>
+                                    <div class="meta-item"><span>❤️</span><span id="collectCount">收藏：${formatNumber(currentNovel.collectNums)}</span></div>
+                                    <div class="meta-item"><span>📖</span><span>字数：${formatNumber(currentNovel.wordCount)}字</span></div>
+                                    <div class="meta-item"><span>📝</span><span>状态：${currentNovel.isFinished ? '已完结' : '连载中'}</span></div>
+                                    <div class="meta-item"><span>🏷️</span><span>分类：${currentNovel.category}</span></div>
+                                    <div class="meta-item"><span>🔥</span><span>热度：${formatHot(currentNovel.hot || 0)}</span></div>
+                                </div>
+                                ${ratingSectionHtml}
+                                <div class="action-buttons">
+                                    <button class="btn btn-primary" onclick="startReading()">📖 开始阅读</button>
+                                    ${collectBtnHtml}
+                                    ${likeBtnHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    descriptionEl.textContent = currentNovel.detailedDescription || currentNovel.shortDescription || '暂无简介';
+                    renderChapters(chapters);
+                    infoEl.style.display = 'block';
+                } else {
+                    infoEl.innerHTML = '<p style="text-align: center; color: #ff6b6b;">小说不存在或已被删除</p>';
+                    infoEl.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('加载小说详情失败:', error);
+                infoEl.innerHTML = '<p style="text-align: center; color: #ff6b6b;">加载失败，请刷新重试</p>';
+                infoEl.style.display = 'block';
+            } finally {
+                loadingEl.style.display = 'none';
+            }
+        }
+
+        // 渲染章节列表
+        function renderChapters(chapters) {
+            const loadingEl = document.getElementById('chaptersLoading');
+            const listEl = document.getElementById('chaptersList');
+
+            if (chapters && chapters.length > 0) {
+                listEl.innerHTML = chapters.map(chapter => `
+                    <div class="chapter-item" onclick="readChapter(${chapter.id})">
+                        <div class="chapter-title">${chapter.title}</div>
+                        <div class="chapter-meta">${formatNumber(chapter.wordCount)}字</div>
+                    </div>
+                `).join('');
+            } else {
+                listEl.innerHTML = '<p style="text-align: center; color: #666;">暂无章节</p>';
+            }
+        }
+
+        // 加载评论
+        async function loadComments() {
+            const loadingEl = document.getElementById('commentsLoading');
+            const listEl = document.getElementById('commentsList');
+
+            loadingEl.style.display = 'block';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/novel/${novelId}/comments?page=1&pageSize=20`);
+                const result = await response.json();
+
+                if (result.success && result.data && result.data.data) {
+                    const comments = result.data.data;
+
+                    if (comments.length > 0) {
+                        listEl.innerHTML = comments.map(comment => `
+                            <div class="comment-item">
+                                <div class="comment-bubble">
+                                    <div class="comment-header">
+                                        <span class="comment-user">${comment.username ? comment.username : '用户' + comment.userId}</span>
+                                        <span class="comment-time">${formatDate(comment.publishTime)}</span>
+                                    </div>
+                                    <div class="comment-content">${comment.content}</div>
+                                </div>
+                            </div>
+                        `).join('');
+                    } else {
+                        listEl.innerHTML = '<p style="text-align: center; color: #666;">还没有评论，来抢沙发吧~</p>';
+                    }
+                } else {
+                    listEl.innerHTML = '<p style="text-align: center; color: #666;">还没有评论，来抢沙发吧~</p>';
+                }
+            } catch (error) {
+                console.error('加载评论失败:', error);
+                listEl.innerHTML = '<p style="text-align: center; color: #ff6b6b;">加载评论失败</p>';
+            } finally {
+                loadingEl.style.display = 'none';
+            }
+        }
+
+        // 设置评分
+        function setRating(rating) {
+            userRating = rating;
+
+            // 更新星星显示
+            document.querySelectorAll('.star').forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // 提交评分
+        async function submitRating() {
+            if (!currentUser) {
+                showError('请先登录');
+                return;
+            }
+
+            if (userRating === 0) {
+                showWarning('请选择评分');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/novel/${novelId}/rate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({
+                        rating: userRating,
+                        userId: currentUser.userId
+                    })
+                });
+
+                let text = await response.text();
+                let result;
+                try {
+                    result = JSON.parse(text);
+                } catch (e) {
+                    showError(`评分失败，HTTP状态码: ${response.status}<br>响应内容: ${text || '(空)'}<br>请检查后端接口返回`);
+                    throw e;
+                }
+
+                if (response.status === 401 || response.status === 403) {
+                    showError('请重新登录后再评分');
+                    return;
+                }
+                if (response.status === 400) {
+                    showError('评分失败：' + (result.message || '参数错误'));
+                    return;
+                }
+                if (result.success) {
+                    showSuccess('评分成功！');
+                    setTimeout(() => location.reload(), 1500);
+                } else {
+                    showError('评分失败：' + (result.message || '未知错误'));
+                }
+            } catch (error) {
+                console.error('评分失败:', error);
+                showError('评分失败，请重试');
+            }
+        }
+
+        // 开始阅读
+        function startReading() {
+            // 跳转到第一章
+            if (chapters && chapters.length > 0) {
+                const firstChapter = chapters[0];
+                window.location.href = `novel-reader.html?novelId=${novelId}&chapterId=${firstChapter.id}`;
+            } else {
+                showWarning('暂无章节内容');
+            }
+        }
+
+        // 阅读章节
+        function readChapter(chapterId) {
+            window.location.href = `novel-reader.html?novelId=${novelId}&chapterId=${chapterId}`;
+        }
+
+        // 加入收藏
+        function toggleCollect() {
+            if (!currentUser) {
+                showError('请先登录');
+                return;
+            }
+            fetch(`${API_BASE_URL}/novel/${novelId}/collect?userId=${currentUser.userId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+                .then(async res => {
+                    let text = await res.text();
+                    let data;
+                    try {
+                        data = JSON.parse(text);
+                    } catch (e) {
+                        showError(`收藏失败，HTTP状态码: ${res.status}<br>响应内容: ${text || '(空)'}<br>请检查后端接口返回`);
+                        throw e;
+                    }
+                    if (data.success) {
+                        const collectBtn = document.getElementById('collectBtn');
+                        const collectCountEl = document.getElementById('collectCount');
+                        let count = parseInt(collectCountEl.textContent.replace(/[^\d]/g, ''));
+                        if (data.data === true) {
+                            showSuccess('收藏成功！');
+                            collectBtn.innerHTML = '💔 已收藏';
+                            collectCountEl.textContent = '收藏：' + (count + 1);
+                        } else {
+                            showSuccess('已取消收藏');
+                            collectBtn.innerHTML = '❤️ 加入收藏';
+                            collectCountEl.textContent = '收藏：' + (count - 1);
+                        }
+                    } else {
+                        showWarning('收藏失败：' + (data.message || '未知错误'));
+                    }
+                })
+                .catch((err) => {
+                    showError('收藏失败，请重试<br>' + (err && err.message ? err.message : err));
+                });
+        }
+
+        // 提交评论
+        async function submitComment() {
+            if (!currentUser) {
+                showError('请先登录');
+                return;
+            }
+
+            const content = document.getElementById('commentInput').value.trim();
+            if (!content) {
+                showWarning('请输入评论内容');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/novel/${novelId}/comments`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    },
+                    body: JSON.stringify({
+                        content: content,
+                        userId: currentUser.userId
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // 清空输入框
+                    document.getElementById('commentInput').value = '';
+                    document.getElementById('charCount').textContent = '0';
+
+                    // 重新加载评论
+                    loadComments();
+
+                    showSuccess('评论发表成功！');
+                } else {
+                    showError('评论失败：' + (result.message || '未知错误'));
+                }
+            } catch (error) {
+                console.error('发表评论失败:', error);
+                showError('发表评论失败，请重试');
+            }
+        }
+
+        // 格式化数字
+        function formatNumber(num) {
+            if (num >= 10000) {
+                return (num / 10000).toFixed(1) + '万';
+            }
+            return num.toString();
+        }
+
+        // 格式化日期
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+
+            const minute = 60 * 1000;
+            const hour = 60 * minute;
+            const day = 24 * hour;
+
+            if (diff < minute) {
+                return '刚刚';
+            } else if (diff < hour) {
+                return Math.floor(diff / minute) + '分钟前';
+            } else if (diff < day) {
+                return Math.floor(diff / hour) + '小时前';
+            } else if (diff < 7 * day) {
+                return Math.floor(diff / day) + '天前';
+            } else {
+                return date.toLocaleDateString();
+            }
+        }
+
+        function likeNovel() {
+            if (!currentUser) {
+                showError('请先登录');
+                return;
+            }
+            fetch(`${API_BASE_URL}/novel/${novelId}/like?userId=${currentUser.userId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+                .then(async res => {
+                    let text = await res.text();
+                    let data;
+                    try {
+                        data = JSON.parse(text);
+                    } catch (e) {
+                        showError(`点赞失败，HTTP状态码: ${res.status}<br>响应内容: ${text || '(空)'}<br>请检查后端接口返回`);
+                        throw e;
+                    }
+                    if (data.success) {
+                        const likeCountEl = document.getElementById('likeCount');
+                        const likeBtn = document.getElementById('likeBtn');
+                        if (data.data === true) {
+                            // 点赞
+                            showSuccess('点赞成功！');
+                            likeCountEl.textContent = parseInt(likeCountEl.textContent) + 1;
+                            likeBtn.innerHTML = '👍 已点赞 <span id="likeCount">' + likeCountEl.textContent + '</span>';
+                        } else {
+                            // 取消点赞
+                            showSuccess('已取消点赞');
+                            likeCountEl.textContent = Math.max(0, parseInt(likeCountEl.textContent) - 1);
+                            likeBtn.innerHTML = '👍 点赞 <span id="likeCount">' + likeCountEl.textContent + '</span>';
+                        }
+                    } else {
+                        showWarning('点赞失败：' + (data.message || '未知错误'));
+                    }
+                })
+                .catch((err) => {
+                    showError('点赞失败，请重试<br>' + (err && err.message ? err.message : ''));
+                });
+        }
+
+        // 格式化热度
+        function formatHot(hot) {
+            if (hot >= 1000000) return (hot / 1000000).toFixed(1) + 'm';
+            if (hot >= 1000) return (hot / 1000).toFixed(1) + 'k';
+            return hot.toFixed(1);
+        }
+    </script>
+</body>
+
+</html>

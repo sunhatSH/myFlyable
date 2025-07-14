@@ -1,176 +1,191 @@
+using Flyable.Actions;
+using Flyable.Dtos;
 using Flyable.Filters;
-using Flyable.Services.IServices;
-using Flyable.Services.ViewModels;
+using Flyable.Filters.Attributes;
 using Flyable.StatusCode;
-using Masuit.Tools.Strings;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
+using Flyable.Wraps;
+using Flyable.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Distributed;
-using Newtonsoft.Json;
-using Org.BouncyCastle.Utilities.Encoders;
+using Serilog;
 
 namespace Flyable.Controllers;
 
-/// <summary>
-///     默认允许所有角色访问
-/// </summary>
-[Route("api/[controller]/[action]")]
-[EnableCors]
-[SelfAuthorize]
-public class UserController : ControllerBase
+[ApiController]
+[Route("api/users")]
+[SensitiveWordsDetect(1)]
+// [SelfAuthorize(UserLevel.FeatherStart)]
+public class UserController(UserAction userAction, VerifyCodeService verifyCodeService) : ControllerBase
 {
-    private readonly IDistributedCache _cache;
-    private readonly ILogger<UserController> _logger;
-    private readonly IUserBaseService _userBaseService;
-
-    public UserController(IUserBaseService userBaseService, IDistributedCache cache, ILogger<UserController> logger)
-    {
-        _userBaseService = userBaseService;
-        _cache = cache;
-        _logger = logger;
-    }
-
-    [HttpPost]
+    /// <summary>
+    /// 获取图片验证码
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("image_verify_code")]
     [AllowAnonymous]
-    public async Task<IActionResult> Register(UserModelView userModel, string password, string verifyCode)
+    public async ValueTask<IActionResult> GetImageVerifyCode()
     {
-        var result = await _userBaseService.Register(userModel, password, verifyCode);
-        if (result == null)
-            return (ContentResult)new CodeResult
-            {
-                BaseCode = UserStatusCode.Failed,
-                Message = "注册失败"
-            };
-
-        return (ContentResult)new CodeResult
-        {
-            BaseCode = UserStatusCode.Created,
-            Message = "注册成功"
-        };
+        var (code, imageBytes) = verifyCodeService.GenerateVerifyCode();
+        var guid = Guid.NewGuid().ToString();
+        await userAction.AddVerifyCodeAsync(guid, code);
+        Response.Headers.Append("guid", guid);
+        Response.Headers.Append("Access-Control-Expose-Headers", "guid");
+        return File(imageBytes, "image/png");
     }
 
-    [HttpPost]
+    /// <summary>
+    /// 发送邮箱验证码
+    /// </summary>
+    /// <param name="email"></param>
+    /// <param name="username"></param>
+    /// <param name="guid"></param>
+    /// <param name="action"></param>
+    /// <returns></returns>
+    [HttpGet("send_verify_code")]
     [AllowAnonymous]
-    public async Task<IActionResult> Login([FromForm] string username, [FromForm] string password,
-        [FromForm] string verifyCode)
+    public async ValueTask<IActionResult> SendVerifyCodeAsync(string email, string username, string guid, [FromQuery] ActionType action)
     {
-        var result = await _userBaseService.Login(username, password, verifyCode);
-        if (result == UserStatusCode.LoginFailed)
-            return (ContentResult)new CodeResult
-            {
-                BaseCode = UserStatusCode.LoginFailed,
-                Message = "登录失败"
-            };
-
-        return (ContentResult)new CodeResult
+        Log.Error($"send_verify_code: {email}, {username}, {guid}, {action}");
+        var res = await userAction.SendVerifyCodeAsync(email, username, guid, action);
+        if (res == SendVerifyCodeStatusCode.Success)
         {
-            BaseCode = UserStatusCode.Success,
-            Message = JsonConvert.SerializeObject(_userBaseService.GetUserModelView(username))
-        };
+            return Ok();
+        }
+        return new CodeResult { BaseCode = res };
     }
 
-    [HttpGet]
+    /// <summary>
+    /// 注册
+    /// </summary>
+    /// <param name="registerDto"></param>
+    /// <param name="guid"></param>
+    /// <returns></returns>
+    [HttpPost("register")]
     [AllowAnonymous]
-    public IActionResult GetVerifyCode()
+    public async ValueTask<IActionResult> RegisterAsync([FromBody] RegisterDto registerDto, string guid)
     {
-        var verifyCode = _userBaseService.GetVerifyCode();
-        var stream = verifyCode.CreateValidateGraphic();
-        // 将stream以图片形式返回给浏览器
-        return new JsonResult(new
+        Log.Error($"register: {registerDto.Username}");
+        var res = await userAction.RegisterAsync(registerDto, guid);
+        Log.Error($"register: {registerDto.Username} res: {res}");
+        if (res != RegisterStatusCode.Success)
         {
-            image = Base64.ToBase64String(stream.ToArray()).ReplaceLineEndings(""),
-            guid = Guid.NewGuid().ToString()
-        });
-        // return File(stream, "image/png");
+            return new CodeResult { BaseCode = res };
+        }
+        await userAction.RemoveVerifyCodeAsync("verifyCode_" + guid);
+        return Ok();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> DestroyAccount([FromForm] string username, [FromForm] string password,
-        [FromForm] string verifyCode)
+    /// <summary>
+    /// 登录
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="guid"></param>
+    /// <returns></returns>
+    [HttpPost("login")]
+    [AllowAnonymous]
+    public async ValueTask<IActionResult> LoginAsync([FromBody] LoginDto user, string guid)
     {
-        var result = await _userBaseService.DestroyAccount(username, password, verifyCode);
-        if (result == UserStatusCode.DestroyFailed)
-            return (ContentResult)new CodeResult
-            {
-                BaseCode = UserStatusCode.DestroyFailed,
-                Message = "注销失败"
-            };
+        Log.Error($"login: {user.Username}, GUID: {guid}");
 
-        return (ContentResult)new CodeResult
+        var (statusCode, userInfo) = await userAction.LoginAsync(user, guid);
+        if (statusCode != LoginStatusCode.Success)
         {
-            BaseCode = UserStatusCode.Destroyed,
-            Message = "注销成功"
-        };
+            return new CodeResult { BaseCode = statusCode };
+        }
+        await userAction.RemoveVerifyCodeAsync("verifyCode_" + guid);
+        return Ok(new { Success = true, Data = userInfo });
     }
 
-    /**
-     * <summary>
-     *     修改用户信息, 只能全部修改或者全不修改
-     * </summary>
-     * <param name="alteredItem"></param>
-     * <returns></returns>
-     * @api {post} /api/User/UpdateUser 修改用户信息
-     */
-    [HttpPost]
-    public async Task<IActionResult> UpdateUser(params dynamic[] alteredItem)
+    /// <summary>
+    /// 注销用户
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="guid"></param>
+    /// <returns></returns>
+    [HttpDelete("unregister")]
+    public async ValueTask<IActionResult> UnregisterAsync([FromBody] UnregisterDto user, string guid)
     {
-        var (status, newUser) = await _userBaseService.UpdateUser(alteredItem);
-        if (status != UserStatusCode.UpdateUserSuccess)
-            return (ContentResult)new CodeResult
-            {
-                BaseCode = status,
-                Message = "修改用户信息失败"
-            };
-        return (ContentResult)new CodeResult
+        var res = await userAction.UnregisterAsync(user, guid);
+        if (res != UnregisterStatusCode.Success)
         {
-            BaseCode = UserStatusCode.Accepted,
-            Message = JsonConvert.SerializeObject(newUser)
-        };
+            return new CodeResult { BaseCode = res };
+        }
+        await userAction.RemoveVerifyCodeAsync("verifyCode_" + guid);
+        await userAction.RemoveVerifyCodeAsync("EmailVerifyCode_" + guid);
+
+        return Ok();
     }
 
-    [HttpGet]
-    public async Task<IActionResult> FindAllUsers()
+    /// <summary>
+    /// 修改用户基础信息
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="guid"></param>
+    /// <returns></returns>
+    [HttpPost("modify_basic_info")]
+    public async ValueTask<IActionResult> ModifyBasicInfoAsync([FromBody] ModifyInfoDto user, string guid)
     {
-        return (ContentResult)new CodeResult
-        {
-            BaseCode = UserStatusCode.Accepted,
-            Message = JsonConvert.SerializeObject(await _userBaseService.FindAllUsers())
-        };
+        await userAction.ModifyMyselfAsync(user);
+        return Ok();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> FollowUser([FromForm] string username)
+    /// <summary>
+    /// 修改密码
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="guid"></param>
+    /// <returns></returns>
+    [HttpPost("modify_password")]
+    public async ValueTask<IActionResult> ModifyPasswordAsync([FromBody] ModifyPasswordDto user, string guid)
     {
-        var result = await _userBaseService.FollowUser(username);
-        if (result == UserStatusCode.OperationFailed)
-            return (ContentResult)new CodeResult
-            {
-                BaseCode = UserStatusCode.OperationFailed,
-                Message = "操作失败"
-            };
-
-        return (ContentResult)new CodeResult
-        {
-            BaseCode = UserStatusCode.Accepted,
-            Message = "操作成功"
-        };
+        await userAction.ModifyPasswordAsync(user);
+        return Ok();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> UnFollowUser([FromForm] int userId)
+    /// <summary>
+    /// 修改邮箱
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="guid"></param>
+    /// <returns></returns>
+    [HttpPost("modify_email")]
+    public async ValueTask<IActionResult> ModifyEmailAsync([FromBody] ModifyEmailDto user, string guid)
     {
-        var result = await _userBaseService.UnFollowUser(userId);
-        if (result == UserStatusCode.OperationFailed)
-            return (ContentResult)new CodeResult
-            {
-                BaseCode = UserStatusCode.OperationFailed,
-                Message = "操作失败"
-            };
-        return (ContentResult)new CodeResult
-        {
-            BaseCode = UserStatusCode.Accepted,
-            Message = "操作成功"
-        };
+        await userAction.ModifyEmailAsync(user);
+        return Ok();
+    }
+    /// <summary>
+    /// 修改头像
+    /// </summary>
+    /// <returns></returns>
+    [HttpPost("modify_avatar")]
+    public async ValueTask<IActionResult> ModifyAvatarAsync([FromBody] ModifyAvatarDto user, string guid)
+    {
+        await userAction.ModifyAvatarAsync(user);
+        return Ok();
+    }
+    // 绑定第三方账号
+    [HttpPost("bind_third_party_account")]
+    public async ValueTask<IActionResult> BindThirdPartyAccountAsync([FromBody] BindThirdPartyAccountDto user, string guid)
+    {
+        await userAction.BindThirdPartyAccountAsync(user);
+        return Ok(0);
+    }
+
+    // 获取用户收藏的小说
+    [HttpGet("{userId}/collections/novels")]
+    public async Task<IActionResult> GetUserCollectionNovels(int userId)
+    {
+        var novels = await userAction.GetUserCollectionNovelsAsync(userId);
+        return Ok(new { Success = true, Data = novels });
+    }
+
+    // 获取用户收藏的帖子
+    [HttpGet("{userId}/collections/posts")]
+    public async Task<IActionResult> GetUserCollectionPosts(int userId)
+    {
+        var posts = await userAction.GetUserCollectionPostsAsync(userId);
+        return Ok(new { Success = true, Data = posts });
     }
 }

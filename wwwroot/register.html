@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title data-i18n="register.title">Register - Flyable</title>
+    <link href="css/user.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+    <link href="css/wings-animation.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+    <script src="js/dist/i18n.js"></script>
+    <script src="js/dist/modal.js"></script>
+    <script src="js/dist/config.js"></script>
+    <style>
+        .verify-code-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .verify-code-image {
+            height: 40px;
+            cursor: pointer;
+        }
+    
+        .verify-code-btn {
+            background: linear-gradient(92deg, #b8860b 10%, #daa520 40%, #cd853f 60%, #b8860b 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 4px rgba(184, 134, 11, 0.8), 0 1px 0 #fffbe3;
+            border: 1px solid #e6c97a;
+            padding: 8px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            background-color: rgba(230, 201, 122, 0.1);
+            white-space: nowrap;
+            min-width: 80px;
+        }
+    
+        .verify-code-btn:hover {
+            background-color: rgba(230, 201, 122, 0.2);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(230, 201, 122, 0.3);
+        }
+    
+        .verify-code-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+    
+        #emailVerifyCode {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+<div class="language-switch">
+    <button id="languageSwitch" class="lang-btn" data-i18n="common.switchToEn"
+        onclick="setLanguage(getCurrentLanguage() === 'zh' ? 'en' : 'zh')">English
+    </button>
+</div>
+<div class="center-wrapper">
+    <div id="draggable-card" class="container">
+        <div class="animated-title">
+            <div class="main-title golden-text frosted-gold-text">Flyable</div>
+            <div class="sub-title frosted-gold-text"
+                style="text-align:center;font-size:2em;font-weight:bold;margin-top:10px;">注册
+            </div>
+        </div>
+        <form id="registerForm">
+            <div class="form-group">
+                <input id="username" data-i18n-placeholder="register.username" name="username" placeholder="用户名" required type="text">
+                </div>
+                <div class="form-group">
+                <input id="email" data-i18n-placeholder="register.email" name="email" placeholder="邮箱" required type="email">
+                </div>
+                <div class="form-group">
+                <input id="password" data-i18n-placeholder="register.password" name="password" placeholder="密码" required
+                    type="password">
+                </div>
+                <div class="form-group">
+                <div class="verify-code-container">
+                    <input id="emailVerifyCode" data-i18n-placeholder="email verification code" name="emailVerifyCode"
+                        placeholder="邮箱验证码" required type="text">
+                    <button id="getVerifyCodeBtn" class="verify-code-btn" type="button">获取验证码</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="verify-code-container">
+                    <input id="verifyCode" data-i18n-placeholder="pictured verification code" name="verifyCode" placeholder="图片验证码"
+                        required type="text">
+                    <img id="verifyCodeImage" alt="验证码" class="verify-code-image">
+                </div>
+            </div>
+            <button class="btn btn-primary frosted-gold-text" data-i18n="register.submit" type="submit">注册</button>
+            </form>
+        <div id="message" class="frosted-gold-text"></div>
+        <div class="nav-links">
+            <a class="frosted-gold-text" data-i18n="register.hasAccount" href="login.html">已有账号？立即登录</a>
+            </div>
+            </div>
+</div>
+<script src="js/dist/i18n.js"></script>
+<script src="js/dist/user.js"></script>
+<script src="js/dist/drag-card.js"></script>
+<script>
+    let currentGuid = '';
+
+        // 初始化验证码
+        const verifyCodeImage = document.getElementById('verifyCodeImage');
+        refreshImageVerifyCode(verifyCodeImage);
+
+        // 点击图片刷新验证码
+        verifyCodeImage.addEventListener('click', () => {
+            refreshImageVerifyCode(verifyCodeImage);
+        });
+
+        let countdown = 0;
+        let countdownTimer = null;
+
+        function updateVerifyCodeButton() {
+            const btn = document.getElementById('getVerifyCodeBtn');
+            if (countdown > 0) {
+                btn.textContent = `${countdown}秒后重发`;
+                btn.disabled = true;
+            } else {
+                btn.textContent = '获取验证码';
+                btn.disabled = false;
+            }
+        }
+
+        function startCountdown() {
+            countdown = 60;
+            updateVerifyCodeButton();
+            countdownTimer = setInterval(() => {
+                countdown--;
+                updateVerifyCodeButton();
+                if (countdown <= 0) {
+                    clearInterval(countdownTimer);
+                }
+            }, 1000);
+        }
+    
+        document.getElementById('getVerifyCodeBtn').addEventListener('click', async () => {
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+
+            if (!email || !username) {
+            showError('请先填写邮箱和用户名');
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            showError('请输入有效的邮箱地址');
+            return;
+        }
+
+        try {
+            // 使用图片验证码的GUID，如果没有则生成新的
+            const verifyCodeImage = document.getElementById('verifyCodeImage');
+            let guid = verifyCodeImage.dataset.guid || generateGuid();
+            currentGuid = guid;
+
+            // 如果没有图片验证码的GUID，先刷新图片验证码
+            if (!verifyCodeImage.dataset.guid) {
+                await new Promise((resolve) => {
+                    refreshImageVerifyCode(verifyCodeImage);
+                    setTimeout(() => {
+                        guid = verifyCodeImage.dataset.guid;
+                        currentGuid = guid;
+                        resolve();
+                    }, 1000);
+                });
+            }
+
+            const response = await fetch(`${API_BASE_URL}/users/send_verify_code?email=${encodeURIComponent(email)}&username=${encodeURIComponent(username)}&guid=${encodeURIComponent(guid)}&action=register`, {
+                method: 'GET'
+            });
+
+            if (response.ok) {
+                showMessage('message', '验证码已发送到您的邮箱，请查收');
+                startCountdown();
+            } else {
+                const result = await response.json();
+                let errorMessage = '发送验证码失败';
+                if (result.BaseCode === 1) {
+                    errorMessage = '发送失败，请检查邮箱地址';
+                } else if (result.BaseCode === 2) {
+                    errorMessage = '发送过于频繁，请稍后再试';
+                } else if (result.Message) {
+                    errorMessage = result.Message;
+                }
+                showMessage('message', errorMessage, true);
+            }
+        } catch (error) {
+            console.error('发送验证码失败:', error);
+            showMessage('message', '发送验证码失败，请检查网络连接', true);
+        }
+    });
+            
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+        const emailVerifyCode = document.getElementById('emailVerifyCode').value;
+        const verifyCode = document.getElementById('verifyCode').value;
+        
+        // 使用图片验证码的GUID
+        const guid = document.getElementById('verifyCodeImage').dataset.guid;
+        if (!guid) {
+            showMessage('message', '请先刷新图片验证码', true);
+            return;
+        }
+
+        if (!currentGuid) {
+            showMessage('message', '请先获取邮箱验证码', true);
+            return;
+        }
+
+        if (!emailVerifyCode) {
+            showMessage('message', '请输入邮箱验证码', true);
+            return;
+        }
+
+        if (!verifyCode) {
+            showMessage('message', '请输入图片验证码', true);
+            return;
+        }
+        
+        try {
+            const response = await fetch(`${API_BASE_URL}/users/register?guid=${encodeURIComponent(guid)}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    email,
+                    pwdToken: password,
+                    emailCode: emailVerifyCode,
+                    verifyCode: verifyCode,
+                    ip: await getUserIP()
+                })
+            });
+
+            if (response.ok) {
+                showMessage('message', '注册成功！正在跳转到登录页面...');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            } else {
+                const result = await response.json();
+                let errorMessage = '注册失败';
+
+                switch (result.BaseCode) {
+                    case 4001:
+                        errorMessage = '用户名已存在，请换一个用户名';
+                        break;
+                    case 4002:
+                        errorMessage = '邮箱已被注册，请使用其他邮箱';
+                        break;
+                    case 4004:
+                        errorMessage = '图片验证码错误，请重新输入';
+                        break;
+                    case 4005:
+                        errorMessage = '图片验证码已过期，请刷新后重试';
+                        break;
+                    case 4007:
+                        errorMessage = '邮箱验证码错误，请重新输入';
+                        break;
+                    case 4008:
+                        errorMessage = '邮箱验证码已过期，请重新获取';
+                        break;
+                    default:
+                        if (result.Message) {
+                            errorMessage = result.Message;
+                        } else {
+                            errorMessage = '注册失败，请重试';
+                        }
+                }
+
+                showMessage('message', errorMessage, true);
+                // 注册失败时刷新图片验证码
+                refreshImageVerifyCode(verifyCodeImage);
+            }
+        } catch (error) {
+            console.error('注册失败:', error);
+            showMessage('message', '注册失败：网络连接错误', true);
+            // 发生错误时刷新图片验证码
+            refreshImageVerifyCode(verifyCodeImage);
+        }
+    });
+
+        async function getUserIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+        } catch (error) {
+            console.error('获取IP失败:', error);
+            return '127.0.0.1';
+        }
+        }
+
+        // 页面加载时初始化语言
+        document.addEventListener('DOMContentLoaded', function () {
+            updatePageLanguage();
+    });
+    </script>
+</body>
+
+</html>

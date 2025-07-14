@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title data-i18n="unregister.title">注销账号 - Flyable</title>
+	<link href="css/login.css" rel="stylesheet">
+	<link href="css/animations.css" rel="stylesheet">
+	<link href="css/wings-animation.css" rel="stylesheet">
+	<script src="js/dist/i18n.js"></script>
+</head>
+
+<body>
+<div class="language-switch">
+	<button id="languageSwitch" class="lang-btn" data-i18n="common.switchToEn"
+	        onclick="setLanguage(getCurrentLanguage() === 'zh' ? 'en' : 'zh')">English
+	</button>
+</div>
+<div class="animated-title">
+	<div class="main-title golden-text frosted-gold-text">Flyable</div>
+	<div class="sub-title frosted-gold-text" style="text-align:center;font-size:2em;font-weight:bold;margin-top:10px;">
+		注销账号
+	</div>
+</div>
+<div class="center-wrapper">
+	<div id="draggable-card" class="container">
+		<form id="unregisterForm">
+			<div class="form-group">
+				<input id="password" data-i18n-placeholder="unregister.password" name="password" placeholder="密码"
+				       required
+				       type="password">
+			</div>
+			<div class="form-group">
+				<input id="verifyCode" data-i18n-placeholder="unregister.verifyCode" name="verifyCode"
+				       placeholder="验证码"
+				       required
+				       type="text">
+			</div>
+			<button class="btn btn-primary frosted-gold-text" data-i18n="unregister.submit" type="submit">注销账号
+			</button>
+			<div class="form-footer">
+				<a data-i18n="unregister.backToHome" href="index.html">返回首页</a>
+			</div>
+		</form>
+	</div>
+</div>
+<div id="message" class="frosted-gold-text"></div>
+<div class="nav-links">
+	<a class="frosted-gold-text" data-i18n="unregister.back" href="login.html">返回登录</a>
+</div>
+<script src="js/dist/i18n.js"></script>
+<script src="js/dist/user.js"></script>
+<script src="js/dist/book-carousel.js"></script>
+<script src="js/dist/drag-card.js"></script>
+<script>
+	// 页面加载时初始化语言
+	document.addEventListener('DOMContentLoaded', function () {
+		updatePageLanguage();
+	});
+</script>
+</body>
+
+</html>

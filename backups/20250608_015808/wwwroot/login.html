@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title data-i18n="login.title">Login - Flyable</title>
+    <link href="css/user.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+    <link href="css/wings-animation.css" rel="stylesheet">
+    <script src="js/i18n.js"></script>
+    <style>
+        .verify-code-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .verify-code-image {
+            height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div class="language-switch">
+    <button id="languageSwitch" class="lang-btn" data-i18n="common.switchToEn"
+        onclick="setLanguage(getCurrentLanguage() === 'zh' ? 'en' : 'zh')">English
+    </button>
+</div>
+<div class="center-wrapper">
+    <div class="container" id="draggable-card">
+        <div class="animated-title">
+            <div class="main-title main-title-text golden-text frosted-gold-text">Flyable</div>
+            <div class="sub-title frosted-gold-text"
+                style="text-align:center;font-size:2em;font-weight:bold;margin-top:10px;">登录</div>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <input id="username" data-i18n-placeholder="login.username" name="username" required type="text" placeholder="用户名">
+            </div>
+            <div class="form-group">
+                <input id="password" data-i18n-placeholder="login.password" name="password" required type="password" placeholder="密码">
+            </div>
+            <div class="form-group">
+                <div class="verify-code-container">
+                    <input id="verifyCode" data-i18n-placeholder="login.verifyCode" name="verifyCode" required type="text"
+                        placeholder="验证码">
+                    <img id="verifyCodeImage" alt="验证码" class="verify-code-image">
+                </div>
+            </div>
+            <button class="btn btn-primary frosted-gold-text" data-i18n="login.submit" type="submit">登录</button>
+        </form>
+        <div id="message" class="frosted-gold-text"></div>
+        <div class="nav-links">
+            <a data-i18n="login.noAccount" href="register.html" class="frosted-gold-text" >还没有账号？立即注册</a>
+        </div>
+    </div>
+</div>
+<script src="js/i18n.js"></script>
+<script src="js/user.js"></script>
+<script src="js/drag-card.js"></script>
+<script>
+                                    const verifyCodeImage = document.getElementById('verifyCodeImage');
+                                    refreshImageVerifyCode(verifyCodeImage);
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const verifyCode = document.getElementById('verifyCode').value;
+            const guid = document.getElementById('verifyCodeImage').dataset.guid;
+            console.log(document.getElementById('verifyCodeImage'))
+            if (!guid) {
+                showMessage('message', 'Please refresh the verify code', true);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/login?guid=${encodeURIComponent(guid)}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username,
+                        pwdToken: password,
+                        verifyCode
+                    })
+                });
+
+                if (response.ok) {
+                    showMessage('message', 'Login successful! Redirecting to home page...');
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    const error = await response.json();
+                    showMessage('message', 'Login failed: ' + error.message, true);
+                    // Login failed, refresh verify code
+                    refreshImageVerifyCode(verifyCodeImage);
+                }
+            } catch (error) {
+                showMessage('message', 'Login failed: ' + error.message, true);
+                // Error occurred, refresh verify code
+                refreshImageVerifyCode(verifyCodeImage);
+            }
+        });
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        updatePageLanguage();
+    });
+</script>
+</body>
+
+</html>

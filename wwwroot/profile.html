@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>个人资料 - Flyable</title>
+    <link href="css/user.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+    <script src="js/dist/config.js"></script>
+    <script src="js/dist/user.js"></script>
+    <script src="js/dist/modal.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.5) 0%, rgba(22, 33, 62, 0.5) 30%, rgba(15, 52, 96, 0.5) 100%),
+                url('/wwwroot/img/wing-bg.jpg') center center/cover no-repeat;
+            background-attachment: fixed;
+            line-height: 1.6;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(92deg, #b8860b 10%, #daa520 40%, #cd853f 60%, #b8860b 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 4px rgba(184, 134, 11, 0.8), 0 1px 0 #fffbe3;
+            background-color: rgba(230, 201, 122, 0.2);
+            font-weight: 700;
+        }
+
+        .user-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(120deg, #fffbe3 10%, #f7e7b4 30%, #e6c97a 50%, #bfa14a 70%, #fffbe3 90%);
+            color: #8b6914;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid #e6c97a;
+            box-shadow: 0 2px 8px rgba(230, 201, 122, 0.3);
+        }
+
+        /* 主要内容 */
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .profile-header {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(120deg, #fffbe3 10%, #f7e7b4 30%, #e6c97a 50%, #bfa14a 70%, #fffbe3 90%);
+            color: #8b6914;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 36px;
+            border: 4px solid #e6c97a;
+            box-shadow: 0 4px 20px rgba(230, 201, 122, 0.3);
+            margin: 0 auto 20px;
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(92deg, #fffbe3 10%, #f7e7b4 40%, #e6c97a 60%, #fffbe3 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 8px rgba(230, 201, 122, 0.18), 0 1px 0 #fffbe3;
+            margin-bottom: 10px;
+        }
+
+        .profile-bio {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #daa520;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(92deg, #b8860b 10%, #daa520 40%, #cd853f 60%, #b8860b 90%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 0 2px 4px rgba(184, 134, 11, 0.8), 0 1px 0 #fffbe3;
+            border-color: #e6c97a;
+            background-color: rgba(230, 201, 122, 0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(230, 201, 122, 0.3);
+            background-color: rgba(230, 201, 122, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(26, 26, 46, 0.8);
+            color: #b0b0b0;
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(15, 52, 96, 0.3);
+            color: #e0e0e0;
+        }
+
+        .btn-danger {
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-danger:hover {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff5252;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .content-card {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 5px;
+        }
+
+        .activity-time {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+
+        .setting-label {
+            font-weight: 600;
+            color: #e0e0e0;
+        }
+
+        .switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background: rgba(212, 175, 55, 0.3);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .switch.active {
+            background: #daa520;
+        }
+
+        .switch::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2.5px;
+            left: 2.5px;
+            transition: all 0.3s ease;
+        }
+
+        .switch.active::before {
+            left: 27.5px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px 15px;
+            }
+
+            .profile-header {
+                padding: 25px;
+            }
+
+            .profile-stats {
+                gap: 20px;
+            }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .profile-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="index.html">
+                🕊️ Flyable
+            </a>
+            <ul class="navbar-nav">
+                <li><a class="nav-link" href="index.html">首页</a></li>
+                <li><a class="nav-link" href="forum.html">论坛</a></li>
+                <li><a class="nav-link" href="novel-management.html">创作中心</a></li>
+                <li><a class="nav-link" href="collections.html">收藏页</a></li>
+                <li class="user-menu">
+                    <div class="user-avatar" style="opacity: 0.8;" title="个人资料">
+                        <span id="navUserInitial">U</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <!-- 个人资料头部 -->
+        <div class="profile-header">
+            <div id="profileAvatar" class="profile-avatar">
+                <span id="profileInitial">U</span>
+            </div>
+            <h1 id="profileName" class="profile-name">用户名</h1>
+            <p id="profileBio" class="profile-bio">这个人很懒，什么都没有留下...</p>
+
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span id="novelsCount" class="stat-number">0</span>
+                    <span class="stat-label">创作小说</span>
+                </div>
+                <div class="stat-item">
+                    <span id="postsCount" class="stat-number">0</span>
+                    <span class="stat-label">发布帖子</span>
+                </div>
+                <div class="stat-item">
+                    <span id="collectionsCount" class="stat-number">0</span>
+                    <span class="stat-label">收藏内容</span>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn btn-primary" onclick="editProfile()">✏️ 编辑资料</button>
+                <a class="btn btn-secondary" href="novel-management.html">📚 我的作品</a>
+                <a class="btn btn-secondary" href="collections.html">❤️ 我的收藏</a>
+                <button class="btn btn-danger" onclick="logout()">🚪 退出登录</button>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <!-- 最近活动 -->
+            <div class="content-card">
+                <h2 class="card-title">最近活动</h2>
+                <div id="recentActivities">
+                    <div class="activity-item">
+                        <div class="activity-icon">📝</div>
+                        <div class="activity-content">
+                            <div class="activity-title">欢迎来到 Flyable！</div>
+                            <div class="activity-time">刚刚</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 设置选项 -->
+            <div class="content-card">
+                <h2 class="card-title">设置</h2>
+                <div class="setting-item">
+                    <span class="setting-label">邮件通知</span>
+                    <div class="switch" onclick="toggleSetting(this)"></div>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">隐私模式</span>
+                    <div class="switch" onclick="toggleSetting(this)"></div>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">夜间模式</span>
+                    <div class="switch active" onclick="toggleSetting(this)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let currentUser = null;
+
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', function () {
+            checkLoginStatus();
+            loadUserProfile();
+        });
+
+        // 检查登录状态
+        function checkLoginStatus() {
+            const token = localStorage.getItem('token');
+            const userInfo = localStorage.getItem('userInfo');
+
+            if (!token || !userInfo) {
+                showError('请先登录');
+                setTime
+                window.location.href = 'login.html';
+            }
+        }
+
+        currentUser = JSON.parse(userInfo);
+
+        // 加载用户资料
+        function loadUserProfile() {
+            if (!currentUser) return;
+
+            // 更新个人资料显示
+            const profileName = document.getElementById('profileName');
+            const profileInitial = document.getElementById('profileInitial');
+            const navUserInitial = document.getElementById('navUserInitial');
+            const profileBio = document.getElementById('profileBio');
+
+            if (currentUser.username) {
+                profileName.textContent = currentUser.username;
+                const initial = currentUser.username.charAt(0).toUpperCase();
+                if (profileInitial) profileInitial.textContent = initial;
+                if (navUserInitial) navUserInitial.textContent = initial;
+            }
+
+            if (currentUser.selfIntroduction) {
+                if (profileBio) profileBio.textContent = currentUser.selfIntroduction;
+            }
+
+            // 更新统计数据（这里是模拟数据，实际应该从API获取）
+            const novelsCountEl = document.getElementById('novelsCount');
+            if (novelsCountEl) novelsCountEl.textContent = '0';
+            const postsCountEl = document.getElementById('postsCount');
+            if (postsCountEl) postsCountEl.textContent = '0';
+            const collectionsCountEl = document.getElementById('collectionsCount');
+            if (collectionsCountEl) collectionsCountEl.textContent = '0';
+        }
+
+        // 编辑资料
+        function editProfile() {
+            // 这里可以打开编辑资料的模态框或跳转到编辑页面
+            showInfo('编辑资料功能待实现');
+        }
+
+        // 切换设置选项
+        function toggleSetting(element) {
+            element.classList.toggle('active');
+        }
+
+        // 退出登录
+        function logout() {
+            showConfirm('确定要退出登录吗？', '确认退出')
+	=>
+            {
+                localStorage.r
+                oken
+                ');
+                ge.removeItem('userInfo');
+                showS
+                已退出登录
+                ');
+                setTimeout(() => {
+                    window.loc
+                    ef.html
+                    ';
+                }, 1500);
+            }
+	)
+            ;
+        }
+
+        // 格式化日期
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMins / 60);
+            const diffDays = Math.floor(diffHours / 24);
+
+            if (diffMins < 1) return '刚刚';
+            if (diffMins < 60) return `${diffMins}分钟前`;
+            if (diffHours < 24) return `${diffHours}小时前`;
+            if (diffDays < 7) return `${diffDays}天前`;
+
+            return date.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+    </script>
+</body>
+
+</html>
